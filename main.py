@@ -91,6 +91,7 @@ class ExchangeRateAnalytics:
                 # bps_comparison(df_wise, df_wu)
                 self.excel_writer([df_wise, df_wu], country, writer)
                 print('Successfully write to Excel')
+        return writer
 
 @flow(log_prints=True)
 def run_exchange_rate_analytics():
