@@ -95,6 +95,11 @@ class ExchangeRateAnalytics:
                 self.excel_writer([df_wise, df_wu], country, writer)
                 print('Successfully write to Excel')
 
+        credentials = EmailServerCredentials(
+            username='fx-analytics-deployment@gmail.com',
+            password='12345678',  # must be an app password
+        )
+        credentials.save("BLOCK-NAME-PLACEHOLDER")
         email_server_credentials = EmailServerCredentials.load("BLOCK-NAME-PLACEHOLDER")
         for email_address in ['aminh6c.pmq2@gmail.com']:
             subject = email_send_message.with_options(name=f"email {email_address}").submit(
