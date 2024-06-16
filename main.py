@@ -99,14 +99,15 @@ class ExchangeRateAnalytics:
             username='aminh6c.pmq@gmail.com',
             password='wqbj lpcj ckoi lahr'
         )
-        credentials.save("fx-analytics-block")
-        email_server_credentials = EmailServerCredentials.load("fx-analytics-block")
+        credentials.save('fx-analytics-block')
+        email_server_credentials = EmailServerCredentials.load('fx-analytics-block')
         for email_address in ['aminh6c.pmq2@gmail.com']:
-            subject = email_send_message.with_options(name=f"email {email_address}").submit(
+            subject = email_send_message.with_options(name=f'email {email_address}').submit(
                 email_server_credentials=email_server_credentials,
-                subject="Example Flow Notification using Gmail",
-                msg="This proves email_send_message works!",
+                subject='Example Flow Notification using Gmail',
+                msg='This proves email_send_message works!',
                 email_to=email_address,
+                attachments='output.xlsx'
             )
         return writer
 
