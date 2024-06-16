@@ -85,7 +85,7 @@ class ExchangeRateAnalytics:
 
     def run(self):
         print('Current Directory:', os.getcwd())
-        print('Currrent Excel directory:' self.output_dir)
+        print('Currrent Excel directory:', self.output_dir)
         country_receive_list = self.get_corridor_data(self.corridor_dir)['Receiving country'].unique()
         with pd.ExcelWriter(self.output_dir, engine='openpyxl') as writer:
             for country in country_receive_list:
