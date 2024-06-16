@@ -101,4 +101,5 @@ def run_exchange_rate_analytics():
         corridor_dir='sending_receiving_country_pair.xlsx',
         output_dir='output.xlsx'
     )
-    test.run()
+    out = test.run()
+    return out
