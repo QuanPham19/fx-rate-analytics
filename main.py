@@ -117,7 +117,7 @@ def run_exchange_rate_analytics():
         wise_dir='wise.csv',
         wu_dir='wu_new.csv',
         corridor_dir='sending_receiving_country_pair.xlsx',
-        output_dir='output.xlsx'
+        output_dir=['output.xlsx']
     )
     out = test.run()
     return out
