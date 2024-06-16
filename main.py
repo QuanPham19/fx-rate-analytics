@@ -92,19 +92,6 @@ class ExchangeRateAnalytics:
                 self.excel_writer([df_wise, df_wu], country, writer)
                 print('Successfully write to Excel')
 
-        email_server_credentials = EmailServerCredentials.load("BLOCK-NAME-PLACEHOLDER")
-        attachment_path = os.path.join(os.getcwd(), 'output.xlsx')
-
-        email_addresses = ['aminh6c.pmq2@gmail.com']
-        for email_address in email_addresses:
-            email_send_message.with_options(name=f"email {email_address}").submit(
-                email_server_credentials=email_server_credentials,
-                subject="Example Flow Notification using Gmail",
-                msg="This proves email_send_message works!",
-                email_to=email_address,
-                attachments=[attachment_path] 
-            )
-
 @flow(log_prints=True)
 def run_exchange_rate_analytics():
     test = ExchangeRateAnalytics(
