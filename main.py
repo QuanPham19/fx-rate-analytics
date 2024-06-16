@@ -104,8 +104,8 @@ class ExchangeRateAnalytics:
         for email_address in ['aminh6c.pmq2@gmail.com']:
             subject = email_send_message.with_options(name=f'email {email_address}').submit(
                 email_server_credentials=email_server_credentials,
-                subject='Example Flow Notification using Gmail',
-                msg='This proves email_send_message works!',
+                subject='[FX Rate Analytics] Competitor Weekly Report',
+                msg='Please find the report made by Elijah, Emily and Quan as in the attached file. Best regards.',
                 email_to=email_address,
                 attachments=['output.xlsx']
             )
