@@ -94,6 +94,15 @@ class ExchangeRateAnalytics:
                 # bps_comparison(df_wise, df_wu)
                 self.excel_writer([df_wise, df_wu], country, writer)
                 print('Successfully write to Excel')
+
+        email_server_credentials = EmailServerCredentials.load("BLOCK-NAME-PLACEHOLDER")
+        for email_address in ['aminh6c.pmq2@gmail.com']:
+            subject = email_send_message.with_options(name=f"email {email_address}").submit(
+                email_server_credentials=email_server_credentials,
+                subject="Example Flow Notification using Gmail",
+                msg="This proves email_send_message works!",
+                email_to=email_address,
+            )
         return writer
 
 @flow(log_prints=True)
