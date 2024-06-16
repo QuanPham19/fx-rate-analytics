@@ -107,7 +107,7 @@ class ExchangeRateAnalytics:
                 subject='Example Flow Notification using Gmail',
                 msg='This proves email_send_message works!',
                 email_to=email_address,
-                attachments='output.xlsx'
+                attachments=['output.xlsx']
             )
         return writer
 
@@ -117,7 +117,7 @@ def run_exchange_rate_analytics():
         wise_dir='wise.csv',
         wu_dir='wu_new.csv',
         corridor_dir='sending_receiving_country_pair.xlsx',
-        output_dir=['output.xlsx']
+        output_dir='output.xlsx'
     )
     out = test.run()
     return out
