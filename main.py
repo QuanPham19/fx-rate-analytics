@@ -99,7 +99,7 @@ class ExchangeRateAnalytics:
             username='aminh6c.pmq@gmail.com',
             password='wqbj lpcj ckoi lahr'
         )
-        credentials.save('fx-analytics-block')
+        credentials.save('fx-analytics-block', overwrite=True)
         email_server_credentials = EmailServerCredentials.load('fx-analytics-block')
         for email_address in ['aminh6c.pmq2@gmail.com']:
             subject = email_send_message.with_options(name=f'email {email_address}').submit(
