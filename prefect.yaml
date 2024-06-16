@@ -32,6 +32,6 @@ deployments:
     job_variables: {}
   schedules:
   - interval: 300.0
-    anchor_date: '2024-06-16T03:26:55.282344+00:00'
+    anchor_date: '2024-06-16T03:38:25.346557+00:00'
     timezone: UTC
     active: true
