@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 from countryinfo import CountryInfo
@@ -83,6 +84,7 @@ class ExchangeRateAnalytics:
             startcol += (3 + 2) 
 
     def run(self):
+        print('Current Directory:', os.getcwd())
         country_receive_list = self.get_corridor_data(self.corridor_dir)['Receiving country'].unique()
         with pd.ExcelWriter(self.output_dir, engine='openpyxl') as writer:
             for country in country_receive_list:
