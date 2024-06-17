@@ -101,7 +101,7 @@ class ExchangeRateAnalytics:
         )
         credentials.save('fx-analytics-block', overwrite=True)
         email_server_credentials = EmailServerCredentials.load('fx-analytics-block')
-        for email_address in ['aminh6c.pmq2@gmail.com']:
+        for email_address in ['aminh6c.pmq2@gmail.com', 'elijahchiakaifeng@gmail.com', 'emwong84@gmail.com']:
             subject = email_send_message.with_options(name=f'email {email_address}').submit(
                 email_server_credentials=email_server_credentials,
                 subject='[FX Rate Analytics] Competitor Weekly Report',
