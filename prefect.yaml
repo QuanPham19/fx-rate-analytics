@@ -19,7 +19,7 @@ pull:
     branch: main
 - prefect.deployments.steps.pip_install_requirements:
     requirements_file: requirements.txt
-    stream_output: False
+    stream_output: false
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
@@ -34,6 +34,6 @@ deployments:
     work_queue_name:
     job_variables: {}
   schedules:
-  - rrule: FREQ=WEEKLY;BYDAY=MO
+  - rrule: FREQ=DAILY;INTERVAL=1
     timezone: UTC
     active: true
