@@ -120,3 +120,4 @@ def run_exchange_rate_analytics():
         output_dir='output.xlsx'
     )
     test.run()
+    
