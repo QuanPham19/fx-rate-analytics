@@ -174,7 +174,6 @@ python-nvd3==0.16.0
 python-slugify==8.0.4
 pytz==2024.1
 pytzdata==2020.1
-pywin32==306
 PyYAML==6.0.1
 pyzmq==26.0.3
 querystring-parser==1.2.4
