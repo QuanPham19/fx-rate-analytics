@@ -18,7 +18,6 @@ pull:
     repository: https://github.com/QuanPham19/fx-rate-analytics
     branch: main
 - prefect.deployments.steps.pip_install_requirements:
-    directory: {{ clone-step.directory }}
     requirements_file: requirements.txt
     stream_output: False
 
