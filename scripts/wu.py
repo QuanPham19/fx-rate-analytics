@@ -64,7 +64,7 @@ def main():
     # Iterate through each corridor in the dataframe 
     for i in range(len(df)):
         # Locates the sending country of the corridor pair
-        sending_country = df.loc[i,'Sending country'][:2]
+        sending_country = df.loc[i, 'Sending country']
         # Gets the 2-letter country isocode for each sending country in the dataframe
         send_path = get_country_isocode(sending_country, all_pycountry_countries).lower()
         
@@ -79,7 +79,7 @@ def main():
         # ###DEBUG ---------------------------------------------------
         
         # Locates the receiving country of the corridor pair
-        receiving_country = df.loc[i,'Receiving country'][:2]
+        receiving_country = df.loc[i, 'Receiving country']
         # Gets the 2-letter country isocode for each receiving country in the dataframe
         receive_path = get_country_isocode(receiving_country, all_pycountry_countries).upper()
         # Gets the 3-letter currency isocode based on the 2-letter country isocode
