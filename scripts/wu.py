@@ -34,7 +34,7 @@ def wu_scraping():
     # os.chdir('C:\\Users\8User\OneDrive\Documents\web-scraper-v1.3')
     # Reads the corridor-pair table in excel file and converts to pandas dataframe
     df = pd.read_excel('input/sending_receiving_country_pair.xlsx', 'Corridor pair')   
-    print(df)
+    print(df.head())
     ###DEBUG- to be removed ---------------------------------------------------
     # df=df.iloc[[0,44],:]
     # df.reset_index(drop=True, inplace=True)
@@ -62,7 +62,7 @@ def wu_scraping():
     output_data=[]
     
     # Iterate through each corridor in the dataframe 
-    for i in range(3):
+    for i in range(1):
         # Locates the sending country of the corridor pair
         sending_country = df.loc[i, 'Sending country']
         # Gets the 2-letter country isocode for each sending country in the dataframe
@@ -127,11 +127,11 @@ def wu_scraping():
     df_new = pd.DataFrame(output_data, 
                           columns = ['country_send', 'country_receive', 
                                      'company_name', 'ticket_size', 'timestamp', 
-                                     'fx_rate_send_to_receive_country', 'service_fee'])  
+                                     'fx_rate_3', 'service_fee'])  
     print(df_new.shape)
     # df_new.to_csv(path.join(file_dir, f"WU_{time_export}.csv"))
 
-    print(df_new.head())
+    df_new.to_csv('sample/wu_new.csv')
     driver.quit()
     return df_new
 

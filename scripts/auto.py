@@ -5,10 +5,15 @@ from countryinfo import CountryInfo
 from prefect import task, flow
 from prefect_email import EmailServerCredentials, email_send_message
 
+pd.options.mode.chained_assignment = None
+
+def clean_fee(fee):
+    return float(''.join(filter(lambda x: x.isdigit() or x == '.', fee)))
+
 class ExchangeRateAnalytics:
-    def __init__(self, wise_dir, wu_dir, corridor_dir, output_dir):
-        self.wise_dir = wise_dir
-        self.wu_dir = wu_dir
+    def __init__(self, wise_df, wu_df, corridor_dir, output_dir):
+        self.wise_df = wise_df
+        self.wu_df = wu_df
         self.corridor_dir = corridor_dir
         self.output_dir = output_dir
 
@@ -34,15 +39,19 @@ class ExchangeRateAnalytics:
 
         return df
     
-    def get_fx_data(self, input_dir, country_receive):
-        df = pd.read_csv(input_dir)
+    def get_fx_data(self, df, country_receive):
         df = df[df['country_receive']==country_receive]
+        df['service_fee'] = df['service_fee'].apply(clean_fee)
+        df['fx_rate_3'] = df['fx_rate_3'].apply(clean_fee)
+
+        df['ticket_size'] = df['ticket_size'].astype(str)
+        df['ticket_size'] = df['ticket_size'].apply(clean_fee)
 
         print(f'Processing data of {country_receive}...')
 
-        df['ticket_size'] = df['ticket_size'].astype(int)
-        df[['fx_rate_3', 'service_fee']] = df[['fx_rate_3', 'service_fee']].astype(float)
-        df['amount_receive'] = round( (df['ticket_size'] - df['service_fee']) * df['fx_rate_3'], 2)
+        # df['ticket_size'] = df['ticket_size'].astype(int)
+        # df[['fx_rate_3', 'service_fee']] = df[['fx_rate_3', 'service_fee']].astype(float)
+        df['amount_receive'] = round( (df['ticket_size'] - df['service_fee']) * df['fx_rate_3'], 4)
 
         df.sort_values(by=['country_receive', 'country_send'], inplace=True)
         return df
@@ -89,8 +98,8 @@ class ExchangeRateAnalytics:
         country_receive_list = self.get_corridor_data(self.corridor_dir)['Receiving country'].unique()
         with pd.ExcelWriter(self.output_dir, engine='openpyxl') as writer:
             for country in country_receive_list:
-                df_wise = self.get_fx_data(self.wise_dir, country)
-                df_wu = self.get_fx_data(self.wu_dir, country)
+                df_wise = self.get_fx_data(self.wise_df, country)
+                df_wu = self.get_fx_data(self.wu_df, country)
                 # bps_comparison(df_wise, df_wu)
                 self.excel_writer([df_wise, df_wu], country, writer)
                 print('Successfully write to Excel')

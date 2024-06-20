@@ -51,7 +51,7 @@ def wise_scraping():
     df = pd.DataFrame()
 
     #iterate through each you send exactly option and scrape
-    for optiontoclick in you_send_exactly_options[:10]:
+    for optiontoclick in you_send_exactly_options[:1]:
         #optiontoclick = 'USD'
         #for optiontoclick in you_send_exactly_options:
         #click the you send exactly option
@@ -106,6 +106,8 @@ def wise_scraping():
     time_taken = end_time - start_time
     print("Time taken to run program: " + str(time_taken))
     print(df.head())
+
+    df.to_csv('sample/wise_new.csv')
     return df
 
 
