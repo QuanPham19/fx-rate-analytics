@@ -143,15 +143,6 @@ def initialize_chrome_driver(chrome_path, driver_path):
     options.add_argument('--headless')
     options.add_argument('--disable-dev-shm-usage')
 
-    # options.page_load_strategy = 'normal'
-    # options.add_argument("start-maximized"); 
-    # options.add_argument("enable-automation");
-    # options.add_argument("--headless"); 
-    # options.add_argument("--no-sandbox"); 
-    # options.add_argument("--disable-dev-shm-usage"); 
-    # options.add_argument("--disable-browser-side-navigation");
-    # options.add_argument("--disable-gpu"); 
-
     # Set up ChromeDriver service
     service = Service(executable_path=driver_path)
 
