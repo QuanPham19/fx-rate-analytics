@@ -41,9 +41,9 @@ def main():
     time_export=strftime("%Y-%m-%d %H%M%S", localtime())
     
     # Construct the file directory path where screenshots will be saved
-    # file_dir = path.join(os.getcwd(), f"WU_exports_{time_export}")
+    file_dir = path.join(os.getcwd(), f"WU_exports_{time_export}")
     # Create the directory to store the screenshots if it has not existed yet
-    # os.makedirs(file_dir, exist_ok=True)  
+    os.makedirs(file_dir, exist_ok=True)  
     
     # Define a list of all country names from pycountry for matching with the ones in the dataframe df
     all_pycountry_countries = [country.name for country in pycountry.countries]
