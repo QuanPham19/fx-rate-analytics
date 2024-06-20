@@ -1,4 +1,3 @@
-import requests
 import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -7,10 +6,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-import re
 import pandas as pd
 from datetime import datetime
 import pycountry
+import concurrent.futures
+import os
 
 
 def wise_scraping():
@@ -28,86 +28,89 @@ def wise_scraping():
         sendingandreceivingdf[['Sending country', 'Receiving country']].itertuples(index=False, name=None))
     print(list_of_tuples)
 
-    # Initialize WebDriver
-    driver = initialize_chrome_driver(chrome_path, driver_path)
-
-    #open the website
-    driver.get(url)
-
-    # initialize classes
-    webpage = WebpageInteractions(driver)
-
     # Extract and print all possible values under the 'you send exactly'
+    driver = initialize_chrome_driver(chrome_path, driver_path)
+    driver.get(url)
+    webpage = WebpageInteractions(driver)
     you_send_exactly_options = webpage.get_all_options(0)
     you_send_exactly_options = list(
         filter(lambda x: x in sendingandreceivingdf['Sending country'].values, you_send_exactly_options))
+    driver.quit()
 
     print(you_send_exactly_options)
 
-    # wait for the page to load finish(might be able to remove)
-    webpage.wait_for_page_to_load_finish()
+    # Split the you_send_exactly_options into 5 parts
+    options_split = [you_send_exactly_options[i::5] for i in range(5)]
 
-    # Create the DataFrame to print into excel later
+    # Initialize a DataFrame to collect results from all workers
     df = pd.DataFrame()
 
-    #iterate through each you send exactly option and scrape
-    for optiontoclick in you_send_exactly_options:
-        #optiontoclick = 'USD'
-        #for optiontoclick in you_send_exactly_options:
-        #click the you send exactly option
-        print(optiontoclick)
-
-        webpage.click_option(optiontoclick, 0)
-
-        #get all the recipient get options for that currency, how this works is that i will only take values
-        #from the opened dropdown list
-        try:
-            recipient_options = webpage.get_all_options(1)
-            recipient_options = [element for element in recipient_options if (optiontoclick, element) in list_of_tuples]
-            print(recipient_options)
-
-            #click through each recipient and scrape
-            for recipientoption in recipient_options:
-                #for recipientoption in recipient_options:
-
-                #recipientoption='ARS'
-                #click the recipient get option
-                webpage.click_option(recipientoption, 1)
-
-                values = ProcessScrapedOutput.check_if_value_present_in_country_pair_excel(optiontoclick, recipientoption,
-                                                                      sendingandreceivingdf)
-
-                if not values.empty:
-
-                    ticket_size_columns = [col for col in values.index if 'ticket size' in col]
-
-                    # Iterate through each ticket size in the row
-                    for col in ticket_size_columns:
-                        ticket_size = values[col]
-                        # default ticket size will be 1000
-                        df = process_currency(ticket_size, timestamp, webpage, df)
-                else:
-                    ticket_size = 1000
-                    #default ticket size will be 1000
-                    df = process_currency(ticket_size, timestamp, webpage, df)
-
-        #made for currencies with no dropdown list
-        except IndexError as e:
-            ticket_size = 1000
-            df = process_currency(ticket_size, timestamp, webpage, df)
-            continue
-
-    driver.quit()
-    #QUAN INSERT CODE HERE
+    # Worker function to be executed in parallel
+    def worker(options_subset):
+        worker_df = pd.DataFrame()
 
 
-    #write_to_excel(df, timestamp)
+        driver = initialize_chrome_driver(chrome_path, driver_path)
+        driver.get(url)
+        webpage = WebpageInteractions(driver)
+
+        for optiontoclick in options_subset:
+            print(optiontoclick)
+            webpage.click_option(optiontoclick, 0)
+
+            try:
+                recipient_options = webpage.get_all_options(1)
+                recipient_options = [element for element in recipient_options if (optiontoclick, element) in list_of_tuples]
+                print(recipient_options)
+
+                for recipientoption in recipient_options:
+
+                    # if both you send exactly and recipient are the same country skip and continue the program
+                    if (recipientoption == optiontoclick):
+                        break
+
+                    webpage.click_option(recipientoption, 1)
+                    values = ProcessScrapedOutput.check_if_value_present_in_country_pair_excel(optiontoclick, recipientoption,
+                                                                                              sendingandreceivingdf)
+                    if not values.empty:
+                        ticket_size_columns = [col for col in values.index if 'ticket size' in col]
+
+                        for col in ticket_size_columns:
+                            ticket_size = values[col]
+                            worker_df = process_currency(ticket_size, timestamp, webpage, worker_df)
+                            # webpage.take_screenshot(optiontoclick, recipientoption)
+                    else:
+                        ticket_size = 1000
+                        worker_df = process_currency(ticket_size, timestamp, webpage, worker_df)
+                        # webpage.take_screenshot(optiontoclick, recipientoption)
+
+            except IndexError as e:
+                ticket_size = 1000
+                worker_df = process_currency(ticket_size, timestamp, webpage, worker_df)
+                # webpage.take_screenshot(optiontoclick, "nil")
+                continue
+
+        driver.quit()
+        return worker_df
+
+    # Execute the worker function in parallel using ThreadPoolExecutor
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        futures = [executor.submit(worker, options) for options in options_split]
+        for future in concurrent.futures.as_completed(futures):
+            df = pd.concat([df, future.result()])
+
+    # QUAN INSERT CODE HERE
+
+    # write_to_excel(df, timestamp)
     end_time = time.time()
     time_taken = end_time - start_time
     print("Time taken to run program: " + str(time_taken))
+
+    print("Size of output dataframe:", df.shape)
     print(df.head())
 
-    df.to_csv('sample/wise_new.csv')
+    df.to_csv('sample/wise_new_new.csv')
+
     return df
 
 
@@ -177,10 +180,11 @@ def process_currency(ticket_size,timestamp,webpage,df):
 
     # process the dataframe as pairs and convert to df
     raw_result = ProcessScrapedOutput.convert_text_to_df(data, ticket_size, timestamp)
-    result = ProcessScrapedOutput.format_to_desired_df(raw_result)
+    result = ProcessScrapedOutput.reformat_to_quan_desired_dataframe(raw_result)
     df = pd.concat([df, result], ignore_index=True)
 
     return df
+
 class WebpageInteractions:
     def __init__(self, driver):
         self.driver = driver
@@ -252,6 +256,21 @@ class WebpageInteractions:
 
         # Essential sleep to ensure the value change is processed
         time.sleep(1)
+
+    def take_screenshot(self,optiontoclick, recipientoption):
+        # Scroll down the page so that the white box is in view
+        self.driver.execute_script("window.scrollTo(0, 500);")
+
+        # Create the screenshots directory if it does not exist
+        screenshots_dir = 'screenshots'
+        if not os.path.exists(screenshots_dir):
+            os.makedirs(screenshots_dir)
+
+        # takes screenshot and stores it in the screen shot folder
+        screenshot_path = f'screenshots/{optiontoclick}_to_{recipientoption}.png'
+
+        #take the screenshot
+        self.driver.save_screenshot(screenshot_path)
 
 
 #methods to process the scraped output, as it will not be in a perfect table form when first scraped
@@ -398,18 +417,42 @@ class ProcessScrapedOutput:
     # reformat the dataframe to the one desired by quan
     # so that he can use it for his program
     @staticmethod
-    def format_to_desired_df(df):
+    def reformat_to_quan_desired_dataframe(df):
         # Assuming df is your initial DataFrame
         df = pd.DataFrame(df).set_index('Title').T
 
+        # # Define the columns in the desired order
+        # desired_columns = ['You send exactly', 'Recipient gets', 'company_name', 'ticket_size',
+        #                    'timestamp', 'binary_is_send_currency_applicable_to_transfer',
+        #                    'Total amount we’ll convert', 'Our fee']
+        #
+        # # Ensure the additional columns exist in the DataFrame
+        # for col in desired_columns:
+        #     if col not in df.columns:
+        #         df[col] = None
+        #
+        # # Reorder the DataFrame
+        # df = df[desired_columns]
+        #
+        # # Define new column names
+        # new_column_names = {
+        #     "You send exactly": "country_send",
+        #     "Recipient gets": "country_receive",
+        #     "company_name": "company_name",
+        #     "ticket_size": "ticket_size",
+        #     "Total amount we’ll convert": "fx_rate_3",
+        #     "timestamp": "timestamp",
+        #     "Our fee": "service_fee"
+        # }
         # Define the columns in the desired order
-        desired_columns = ['You send exactly', 'Recipient gets', 'company_name', 'ticket_size',
+        desired_columns = ['You send exactly', 'country_receive', 'company_name', 'ticket_size',
                            'timestamp', 'Total amount we’ll convert', 'Our fee']
 
-        # Ensure the additional columns exist in the DataFrame
-        for col in desired_columns:
-            if col not in df.columns:
-                df[col] = None
+        # Check if the columns exist and create the new column 'country_receive'
+        if 'Recipient gets' in df.columns:
+            df['country_receive'] = df['Recipient gets']
+        elif 'Recipient gets approximately' in df.columns:
+            df['country_receive'] = df['Recipient gets approximately']
 
         # Reorder the DataFrame
         df = df[desired_columns]
@@ -417,7 +460,6 @@ class ProcessScrapedOutput:
         # Define new column names
         new_column_names = {
             "You send exactly": "country_send",
-            "Recipient gets": "country_receive",
             "company_name": "company_name",
             "ticket_size": "ticket_size",
             "Total amount we’ll convert": "fx_rate_3",
@@ -432,5 +474,5 @@ class ProcessScrapedOutput:
         return df_renamed
 
 
-# if __name__ == '__main__':
-#     df = main()
+if __name__ == '__main__':
+    df = main()

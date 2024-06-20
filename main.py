@@ -1,5 +1,5 @@
 from scripts.auto import ExchangeRateAnalytics
-from scripts.wise import wise_scraping
+from scripts.wise_new import wise_scraping
 from scripts.wu import wu_scraping
 
 wu_df = wu_scraping()
