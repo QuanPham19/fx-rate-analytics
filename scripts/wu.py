@@ -31,9 +31,9 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 def main():
     # TO_ADJUST: Change directory to directory of interest 
-    os.chdir('C:\\Users\8User\OneDrive\Documents\web-scraper-v1.3')
+    # os.chdir('C:\\Users\8User\OneDrive\Documents\web-scraper-v1.3')
     # Reads the corridor-pair table in excel file and converts to pandas dataframe
-    df = pd.read_excel('Sending-Receiving country pair.xlsx', 'Corridor pair')   
+    df = pd.read_excel('input/sending_receiving_country_pair.xlsx')   
     
     ###DEBUG- to be removed ---------------------------------------------------
     df=df.iloc[[0,44],:]
@@ -45,17 +45,17 @@ def main():
     time_export=strftime("%Y-%m-%d %H%M%S", localtime())
     
     # Construct the file directory path where screenshots will be saved
-    file_dir = path.join(os.getcwd(), f"WU_exports_{time_export}")
+    # file_dir = path.join(os.getcwd(), f"WU_exports_{time_export}")
     # Create the directory to store the screenshots if it has not existed yet
-    os.makedirs(file_dir, exist_ok=True)  
+    # os.makedirs(file_dir, exist_ok=True)  
     
     # Define a list of all country names from pycountry for matching with the ones in the dataframe df
     all_pycountry_countries = [country.name for country in pycountry.countries]
 
     # TO_ADJUST: Path to the web driver 
-    driver_path = './chromedriver-win64/chromedriver.exe'
-    # TO_ADJUST: Path to the Chrome executable
-    chrome_path = "./chrome-win64/chrome.exe"
+    driver_path = '/usr/bin/chromedriver'
+    chrome_path = '/usr/bin/google-chrome'
+
     # Initialize WebDriver
     driver = initialize_chrome_driver(chrome_path, driver_path)
     
@@ -111,9 +111,9 @@ def main():
                 # ###DEBUG ---------------------------------------------------
                 
                 # Construct the file path for the screenshot using the directory
-                file_path = path.join(file_dir, f"{send_path}_{receive_path}_{ticket_size}.png")
+                # file_path = path.join(file_dir, f"{send_path}_{receive_path}_{ticket_size}.png")
                 # Save a screenshot to the file path
-                driver.save_screenshot(file_path)
+                # driver.save_screenshot(file_path)
             
                 output_data.append(extracted_data)
                     
@@ -134,15 +134,9 @@ def initialize_chrome_driver(chrome_path, driver_path):
     # Set up Chrome options
     options = Options()
     options.binary_location = chrome_path
-    options.page_load_strategy = 'normal'
-    options.add_argument("start-maximized"); 
-    options.add_argument("enable-automation");
-    #options.add_argument("--headless"); 
-    options.add_argument("--no-sandbox"); 
-    options.add_argument("--disable-dev-shm-usage"); 
-    options.add_argument("--disable-browser-side-navigation");
-    options.add_argument("--disable-gpu"); 
-    #options.add_argument("--blink-settings=imagesEnabled=false")
+    options.add_argument('--no-sandbox')
+    options.add_argument('--headless')
+    options.add_argument('--disable-dev-shm-usage')
 
     # Set up ChromeDriver service
     service = Service(executable_path=driver_path)
@@ -169,7 +163,7 @@ def get_country_isocode(match_name, match_list):
 # Gets currency isocode according to the currency code by referring to a pre-defined excel table
 def get_currency_code(country_isocode):
     # Pre-defined excel table
-    df_isocodes = pd.read_excel('Country+Code.xlsx')
+    df_isocodes = pd.read_excel('input/country_code.xlsx')
     receive_curr_path = df_isocodes.loc[df_isocodes["ISO2 Name"] == country_isocode, 
                                         "CURRENCY CODE"].to_string(index=False)
     return receive_curr_path
