@@ -29,7 +29,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 #ui2: ['my','jp','sg','hk','us', 'gb']
 
 
-def main():
+def wu_scraping():
     # TO_ADJUST: Change directory to directory of interest 
     # os.chdir('C:\\Users\8User\OneDrive\Documents\web-scraper-v1.3')
     # Reads the corridor-pair table in excel file and converts to pandas dataframe
@@ -62,7 +62,7 @@ def main():
     output_data=[]
     
     # Iterate through each corridor in the dataframe 
-    for i in range(len(df)):
+    for i in range(2):
         # Locates the sending country of the corridor pair
         sending_country = df.loc[i, 'Sending country']
         # Gets the 2-letter country isocode for each sending country in the dataframe
@@ -414,8 +414,8 @@ def match_text(string, text, matchgroup):
         return re.search(string, text).group(matchgroup)
     return None
 
-import math
-start = time.time()
-main()
-end = time.time()
-print("Total time elapsed:", (end-start)//60, "m", math.ceil(((end-start)/60-(end-start)//60)*60), "s")
+# import math
+# start = time.time()
+# main()
+# end = time.time()
+# print("Total time elapsed:", (end-start)//60, "m", math.ceil(((end-start)/60-(end-start)//60)*60), "s")

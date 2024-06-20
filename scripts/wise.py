@@ -13,7 +13,7 @@ from datetime import datetime
 import pycountry
 
 
-def main():
+def wise_scraping():
     start_time = time.time()
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -430,5 +430,5 @@ class ProcessScrapedOutput:
         return df_renamed
 
 
-if __name__ == '__main__':
-    df = main()
+# if __name__ == '__main__':
+#     df = main()
