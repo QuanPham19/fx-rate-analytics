@@ -33,7 +33,7 @@ def main():
     # TO_ADJUST: Change directory to directory of interest 
     # os.chdir('C:\\Users\8User\OneDrive\Documents\web-scraper-v1.3')
     # Reads the corridor-pair table in excel file and converts to pandas dataframe
-    df = pd.read_excel('input/sending_receiving_country_pair.xlsx')   
+    df = pd.read_excel('input/sending_receiving_country_pair.xlsx', 'Corridor pair')   
     
     ###DEBUG- to be removed ---------------------------------------------------
     df=df.iloc[[0,44],:]
@@ -64,7 +64,7 @@ def main():
     # Iterate through each corridor in the dataframe 
     for i in range(len(df)):
         # Locates the sending country of the corridor pair
-        sending_country = df.loc[i,'Sending country']
+        sending_country = df.loc[i,'Sending country'][:2]
         # Gets the 2-letter country isocode for each sending country in the dataframe
         send_path = get_country_isocode(sending_country, all_pycountry_countries).lower()
         
@@ -79,7 +79,7 @@ def main():
         # ###DEBUG ---------------------------------------------------
         
         # Locates the receiving country of the corridor pair
-        receiving_country = df.loc[i,'Receiving country']
+        receiving_country = df.loc[i,'Receiving country'][:2]
         # Gets the 2-letter country isocode for each receiving country in the dataframe
         receive_path = get_country_isocode(receiving_country, all_pycountry_countries).upper()
         # Gets the 3-letter currency isocode based on the 2-letter country isocode
@@ -93,6 +93,7 @@ def main():
             if ticket_size:
 
                 url = f"https://www.westernunion.com/{send_path}/en/web/send-money/start?ReceiveCountry={receive_path}&ISOCurrency={receive_curr_path}&SendAmount={ticket_size}&FundsOut=BA&FundsIn=BA"
+                print(url)
                 driver.get(url)
                 
                 # if the ticket size exceeds the website limit, readjust the ticket size to the website limit 
@@ -107,6 +108,7 @@ def main():
                 # ###DEBUG ---------------------------------------------------
                 print(i, sending_country, receiving_country, ticket_size)###
                 extracted_data = extract_data(driver, url, send_path, receive_path)
+                print('This is extracted data...')
                 print(extracted_data)
                 # ###DEBUG ---------------------------------------------------
                 
@@ -127,9 +129,12 @@ def main():
                                      'company_name', 'ticket_size', 'timestamp', 
                                      'fx_rate_send_to_receive_country', 'service_fee'])  
     
-    df_new.to_csv(path.join(file_dir, f"WU_{time_export}.csv"))
+    # df_new.to_csv(path.join(file_dir, f"WU_{time_export}.csv"))
+
+    print(df_new.head())
     driver.quit()
-        
+    return df_new
+
 def initialize_chrome_driver(chrome_path, driver_path):
     # Set up Chrome options
     options = Options()
@@ -212,7 +217,7 @@ def extract_data(driver, url, send_path, receive_path):
         
         # readjust window size for screenshot purposes         
         driver.execute_script("document.body.style.zoom='80%'")
-    
+
     return [match_country_send, match_country_receive, "Western Union", data[0], data[1], data[2], data[3]]
 
 
