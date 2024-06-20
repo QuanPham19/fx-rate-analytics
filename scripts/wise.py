@@ -136,7 +136,7 @@ def initialize_chrome_driver(chrome_path, driver_path):
 
 def read_sending_receiving_country_pair_excel():
     # Load the Excel file
-    file_path = 'sending_receiving_country_pair.xlsx'  # replace with the actual file path
+    file_path = '/input/sending_receiving_country_pair.xlsx'  # replace with the actual file path
     sheet_name = 'Sheet1'  # replace with the actual sheet name if different
 
     # Read the specified columns
