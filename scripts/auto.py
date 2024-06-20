@@ -96,8 +96,8 @@ class ExchangeRateAnalytics:
                 print('Successfully write to Excel')
 
         credentials = EmailServerCredentials(
-            username='aminh6c.pmq@gmail.com',
-            password='wqbj lpcj ckoi lahr'
+            username='mastercard.fxanalytics@gmail.com',
+            password='elap izdw vzmu ubet'
         )
         credentials.save('fx-analytics-block', overwrite=True)
         email_server_credentials = EmailServerCredentials.load('fx-analytics-block')
