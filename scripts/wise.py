@@ -51,7 +51,7 @@ def wise_scraping():
     df = pd.DataFrame()
 
     #iterate through each you send exactly option and scrape
-    for optiontoclick in you_send_exactly_options[:1]:
+    for optiontoclick in you_send_exactly_options[:10]:
         #optiontoclick = 'USD'
         #for optiontoclick in you_send_exactly_options:
         #click the you send exactly option
@@ -67,7 +67,7 @@ def wise_scraping():
             print(recipient_options)
 
             #click through each recipient and scrape
-            for recipientoption in recipient_options[:1]:
+            for recipientoption in recipient_options:
                 #for recipientoption in recipient_options:
 
                 #recipientoption='ARS'

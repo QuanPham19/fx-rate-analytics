@@ -12,6 +12,6 @@ from scripts.wu import wu_scraping
 #     )
 #     test.run()
 
-# print(wise_scraping().head())
-print(wu_scraping().head())
+# wise_scraping()
+wu_scraping()
     

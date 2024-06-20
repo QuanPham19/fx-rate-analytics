@@ -34,11 +34,11 @@ def wu_scraping():
     # os.chdir('C:\\Users\8User\OneDrive\Documents\web-scraper-v1.3')
     # Reads the corridor-pair table in excel file and converts to pandas dataframe
     df = pd.read_excel('input/sending_receiving_country_pair.xlsx', 'Corridor pair')   
-    
-    ###DEBUG- to be removed ---------------------------------------------------
-    df=df.iloc[[0,44],:]
-    df.reset_index(drop=True, inplace=True)
     print(df)
+    ###DEBUG- to be removed ---------------------------------------------------
+    # df=df.iloc[[0,44],:]
+    # df.reset_index(drop=True, inplace=True)
+    # print(df)
     ###DEBUG ---------------------------------------------------
     
     #get the date and start time of the programme 
@@ -62,7 +62,7 @@ def wu_scraping():
     output_data=[]
     
     # Iterate through each corridor in the dataframe 
-    for i in range(2):
+    for i in range(3):
         # Locates the sending country of the corridor pair
         sending_country = df.loc[i, 'Sending country']
         # Gets the 2-letter country isocode for each sending country in the dataframe
@@ -128,7 +128,7 @@ def wu_scraping():
                           columns = ['country_send', 'country_receive', 
                                      'company_name', 'ticket_size', 'timestamp', 
                                      'fx_rate_send_to_receive_country', 'service_fee'])  
-    
+    print(df_new.shape)
     # df_new.to_csv(path.join(file_dir, f"WU_{time_export}.csv"))
 
     print(df_new.head())
@@ -143,6 +143,15 @@ def initialize_chrome_driver(chrome_path, driver_path):
     options.add_argument('--headless')
     options.add_argument('--disable-dev-shm-usage')
 
+    # options.page_load_strategy = 'normal'
+    # options.add_argument("start-maximized"); 
+    # options.add_argument("enable-automation");
+    # options.add_argument("--headless"); 
+    # options.add_argument("--no-sandbox"); 
+    # options.add_argument("--disable-dev-shm-usage"); 
+    # options.add_argument("--disable-browser-side-navigation");
+    # options.add_argument("--disable-gpu"); 
+
     # Set up ChromeDriver service
     service = Service(executable_path=driver_path)
 
@@ -151,6 +160,7 @@ def initialize_chrome_driver(chrome_path, driver_path):
     return driver    
     
 
+# Gets country isocode according to the closest match obtained 
 # Gets country isocode according to the closest match obtained 
 def get_country_isocode(match_name, match_list):
     # Find the close matches between the country strings in the dataframe with the ones in the pycountry library 
@@ -217,7 +227,7 @@ def extract_data(driver, url, send_path, receive_path):
         
         # readjust window size for screenshot purposes         
         driver.execute_script("document.body.style.zoom='80%'")
-
+    
     return [match_country_send, match_country_receive, "Western Union", data[0], data[1], data[2], data[3]]
 
 
@@ -227,15 +237,12 @@ def ui1_adjust_payment_options(driver):
     #select sender payment options for interface1
     ui1_select_bank_payment(driver, 'out')
     
-    # ------------------ IN PROGRESS ------------------
-#    #close any pop-up boxes
-#    try:
-#        pop_up = driver.find_element(By.XPATH, f"//div[@class='modal-content wire-transfer-info-popup']")###
-#        btn = pop_up.find_elements(By.TAG_NAME, f"button")####
-#        driver.execute_script("arguments[0].click();", btn[-1])   ###
-#    except:
-#        pass 
-    # ------------------ IN PROGRESS ------------------
+    #close any pop-up boxes
+    try:
+        x_btn = driver.find_element(By.XPATH, "//button[contains(@class, 'close wu-outline-none')]")
+        driver.execute_script("arguments[0].click();", x_btn)
+    except:
+        pass 
     
 
 def ui1_select_bank_payment(driver,funds_in_or_out):
@@ -287,7 +294,8 @@ def ui2_adjust_payment_options(driver):
     # ------------------ IN PROGRESS ------------------
     
     ui2_select_bank_payment(driver, 'out')
-
+    #Edge_case: Canada has pop-ups that occur rather frequently
+    #close pop-up
         
 def ui2_select_bank_payment(driver, funds_in_or_out):
     if funds_in_or_out=='in':
@@ -300,10 +308,13 @@ def ui2_select_bank_payment(driver, funds_in_or_out):
         funds_container = driver.find_element(By.XPATH, f"//div[@id='react-select-dropdown_estimate_details_pay{funds_in_or_out}-listbox']")
     except:
         #click to open the dropdown box if the browser doesn't open it automatically
-        dropdown = driver.find_elements(By.XPATH, "//div[@id='estimate_details_fifo_tiles_container']")
-        dropdown[index].click()
-        funds_container = driver.find_element(By.XPATH, f"//div[@id='react-select-dropdown_estimate_details_pay{funds_in_or_out}-listbox']")
-    
+        try:
+            dropdown = driver.find_elements(By.XPATH, "//div[@id='estimate_details_fifo_tiles_container']")
+            dropdown[index].click()
+            funds_container = driver.find_element(By.XPATH, f"//div[@id='react-select-dropdown_estimate_details_pay{funds_in_or_out}-listbox']")
+        #Edge_case: Canada has 2 different interfaces
+        except:
+            return 
     # find all payment options in the container
     funds_options = funds_container.find_elements(By.XPATH, f"//*[contains(@id,'funds{funds_in_or_out.capitalize()}')]")        
     # find all payment options with strings "Bank transfer"/ "Bank account" in the container
@@ -330,6 +341,7 @@ def ui2_scrape_text(driver, url):
     try:
         wait.until((EC.presence_of_element_located((By.XPATH, "//div[contains(@class,'TotalPayout_disclaimer')]"))))
     except TimeoutException:
+        print("timeout")
         pass
     
     ui2_adjust_payment_options(driver)
@@ -348,6 +360,9 @@ def ui2_scrape_text(driver, url):
         match_fx_rate = "Error"
     #match_service_fee = soup.find('div', {"aria-label":True}).get_text().replace(u'\xa0', u' ').strip()
     
+    
+    #scrape Western Union's fees
+    #there are 3 trys because somehow Canada has 2 slightly different interfaces when I scrape it
     try:
         match_service_fee = soup.find('span', id = "label_estimate_details_strike_fees_value").get_text().replace(u'\xa0', u' ').strip()
     except AttributeError:
