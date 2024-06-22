@@ -33,8 +33,8 @@ def wu_scraping():
 
     all_pycountry_countries = [country.name for country in pycountry.countries]
 
-    driver_path = '/usr/bin/chromedriver'
-    chrome_path = '/usr/bin/google-chrome'
+    driver_path = 'chrome/chromedriver'
+    chrome_path = 'chrome/google-chrome'
 
     def process_corridor(i):
         driver = initialize_chrome_driver(chrome_path, driver_path)
