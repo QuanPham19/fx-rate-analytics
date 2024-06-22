@@ -41,11 +41,7 @@ pull:
     requirements_file: requirements.txt
     stream_output: false
 - prefect.deployments.steps.run_shell_script:
-    script: |
-      sudo apt update
-      sudo apt install wget
-      wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      sudo apt-get install -f
+    script: "bash {{ clone-step.directory }}/chrome/install.sh"
     stream_output: true
     # stream_output: false
 
