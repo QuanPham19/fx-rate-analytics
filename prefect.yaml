@@ -7,7 +7,23 @@ name: fx-rate-analytics
 prefect-version: 2.19.5
 
 # build section allows you to manage and build docker images
-# build: null
+build:
+- prefect.deployments.steps.run_shell_script:
+    id: build-1
+    script: sudo apt install wget
+    stream_output: false
+- prefect.deployments.steps.run_shell_script:
+    id: build-2
+    script: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    stream_output: false
+- prefect.deployments.steps.run_shell_script:
+    id: build-3
+    script: sudo apt-get install -f
+    stream_output: false
+- prefect.deployments.steps.run_shell_script:
+    id: build-4
+    script: echo "Hello World"
+    stream_output: false
 
 # push section allows you to manage if and how this project is uploaded to remote locations
 push: null
@@ -22,10 +38,6 @@ pull:
     directory: "{{ clone-step.directory }}"
     requirements_file: requirements.txt
     stream_output: false
-
-build:
-- prefect.deployments.steps.run_shell_script:
-    script: "bash chrome/install.sh"
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
