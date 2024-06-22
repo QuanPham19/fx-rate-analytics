@@ -24,6 +24,11 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 
 def wu_scraping():
+    print('---------------------------------------------')
+    print('Part 2/3: Scraping data from Western Union...')
+    print('---------------------------------------------')    
+
+    start_time = time.time()
     # TO_ADJUST: Change directory to directory of interest 
     # os.chdir('C:\\Users\EMIL0013\Downloads\web-scraper-v1.3')
     # Reads the corridor-pair table in excel file and converts to pandas dataframe
@@ -34,7 +39,7 @@ def wu_scraping():
     # df=df.iloc[:,:]
     #df=df.drop(df.index[6:9], axis=0)
     df.reset_index(drop=True, inplace=True)
-    print(df.head())
+    # print(df.head())
     ###DEBUG ---------------------------------------------------
     
     #get the date and start time of the programme 
@@ -58,7 +63,7 @@ def wu_scraping():
     output_data=[]
     
     # Iterate through each corridor in the dataframe 
-    for i in range(len(df)):
+    for i in range(44, 45):
         # Locates the sending country of the corridor pair
         sending_country = df.loc[i,'Sending country']
         # Gets the 2-letter country isocode for each sending country in the dataframe
@@ -112,7 +117,7 @@ def wu_scraping():
                 # driver.save_screenshot(file_path)
             
                 output_data.append(extracted_data)
-                    
+    driver.quit()    
                     
     # ###DEBUG ---------------------------------------------------           
     global df_new
@@ -123,11 +128,17 @@ def wu_scraping():
                                      'company_name', 'ticket_size', 'timestamp', 
                                      'fx_rate_3', 'service_fee'])  
     
-    print(df_new.shape)
+    print("Size of output dataframe:", df_new.shape)
+    print(df_new.head())
     # df_new.to_csv(path.join(file_dir, f"WU_{time_export}.csv"))
 
     df_new.to_csv('sample/wu_new.csv')
-    driver.quit()
+    print("Write to sample CSV successfully")
+    
+    end_time = time.time()
+    time_taken = end_time - start_time
+    print(f"Time taken to run program: {round(time_taken, 2)} seconds")
+
     return df_new
 
 def initialize_chrome_driver(chrome_path, driver_path):
@@ -242,7 +253,10 @@ def ui1_select_bank_payment(driver,funds_in_or_out):
         funds_container = driver.find_element(By.XPATH, "//div[@id='funds-in-container']")
     elif funds_in_or_out == 'out':
         funds_out_class = ".row margin-left-0 margin-right-minus-15 ng-scope tiles-container ng-star-inserted".replace(' ', '.')
-        funds_container = driver.find_element(By.CSS_SELECTOR, funds_out_class)
+        try:
+            funds_container = driver.find_element(By.CSS_SELECTOR, funds_out_class)
+        except Exception as e:
+            return
         
     # find all payment options with strings "Bank transfer"/ "Bank account" in the container
     try:
@@ -424,5 +438,3 @@ def match_text(string, text, matchgroup):
 # main()
 # end = time.time()
 # print("Total time elapsed:", (end-start)//60, "m", math.ceil(((end-start)/60-(end-start)//60)*60), "s")
-
-wu_scraping()

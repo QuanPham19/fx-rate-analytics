@@ -14,6 +14,10 @@ import os
 
 
 def wise_scraping():
+    print('------------------------------------')
+    print('Part 1/3: Scraping data from Wise...')
+    print('------------------------------------')
+
     start_time = time.time()
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -26,7 +30,7 @@ def wise_scraping():
 
     list_of_tuples = list(
         sendingandreceivingdf[['Sending country', 'Receiving country']].itertuples(index=False, name=None))
-    print(list_of_tuples)
+    # print(list_of_tuples)
 
     # Extract and print all possible values under the 'you send exactly'
     driver = initialize_chrome_driver(chrome_path, driver_path)
@@ -37,7 +41,7 @@ def wise_scraping():
         filter(lambda x: x in sendingandreceivingdf['Sending country'].values, you_send_exactly_options))
     driver.quit()
 
-    print(you_send_exactly_options)
+    # print(you_send_exactly_options)
 
     # Split the you_send_exactly_options into 5 parts
     options_split = [you_send_exactly_options[i::5] for i in range(5)]
@@ -54,14 +58,13 @@ def wise_scraping():
         driver.get(url)
         webpage = WebpageInteractions(driver)
 
-        for optiontoclick in options_subset:
-            print(optiontoclick)
+        for optiontoclick in options_subset[:1]:
             webpage.click_option(optiontoclick, 0)
 
             try:
                 recipient_options = webpage.get_all_options(1)
                 recipient_options = [element for element in recipient_options if (optiontoclick, element) in list_of_tuples]
-                print(recipient_options)
+                print(f'Processing {optiontoclick} with available options: {recipient_options}...')
 
                 for recipientoption in recipient_options:
 
@@ -104,12 +107,13 @@ def wise_scraping():
     # write_to_excel(df, timestamp)
     end_time = time.time()
     time_taken = end_time - start_time
-    print("Time taken to run program: " + str(time_taken))
+    print(f"Time taken to run program: {round(time_taken, 2)} seconds")
 
     print("Size of output dataframe:", df.shape)
     print(df.head())
 
-    df.to_csv('sample/wise_new_new.csv')
+    df.to_csv('sample/wise_new.csv')
+    print("Write to sample CSV successfully")
 
     return df
 
@@ -421,30 +425,7 @@ class ProcessScrapedOutput:
     def reformat_to_quan_desired_dataframe(df):
         # Assuming df is your initial DataFrame
         df = pd.DataFrame(df).set_index('Title').T
-
-        # # Define the columns in the desired order
-        # desired_columns = ['You send exactly', 'Recipient gets', 'company_name', 'ticket_size',
-        #                    'timestamp', 'binary_is_send_currency_applicable_to_transfer',
-        #                    'Total amount we’ll convert', 'Our fee']
-        #
-        # # Ensure the additional columns exist in the DataFrame
-        # for col in desired_columns:
-        #     if col not in df.columns:
-        #         df[col] = None
-        #
-        # # Reorder the DataFrame
-        # df = df[desired_columns]
-        #
-        # # Define new column names
-        # new_column_names = {
-        #     "You send exactly": "country_send",
-        #     "Recipient gets": "country_receive",
-        #     "company_name": "company_name",
-        #     "ticket_size": "ticket_size",
-        #     "Total amount we’ll convert": "fx_rate_3",
-        #     "timestamp": "timestamp",
-        #     "Our fee": "service_fee"
-        # }
+        
         # Define the columns in the desired order
         desired_columns = ['You send exactly', 'country_receive', 'company_name', 'ticket_size',
                            'timestamp', 'Total amount we’ll convert', 'Our fee']

@@ -93,6 +93,10 @@ class ExchangeRateAnalytics:
             startcol += (3 + 2) 
 
     def run(self):
+        print('-------------------------------------------------')
+        print('Part 3/3: Process Excel and screenshots output...')
+        print('-------------------------------------------------')
+
         print('Current Directory:', os.getcwd())
         print('Currrent Excel directory:', self.output_dir)
         country_receive_list = self.get_corridor_data(self.corridor_dir)['Receiving country'].unique()
