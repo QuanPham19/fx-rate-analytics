@@ -1,6 +1,6 @@
 from scripts.auto import ExchangeRateAnalytics
 from scripts.wise_new import wise_scraping
-from scripts.wu_new import wu_scraping
+from scripts.wu_test import wu_scraping
 
 wise_df = wise_scraping()
 wu_df = wu_scraping()
