@@ -22,6 +22,8 @@ pull:
     directory: "{{ clone-step.directory }}"
     requirements_file: requirements.txt
     stream_output: false
+
+build:
 - prefect.deployments.steps.run_shell_script:
     script: "bash chrome/install.sh"
 
