@@ -42,6 +42,7 @@ pull:
     stream_output: false
 - prefect.deployments.steps.run_shell_script:
     script: "bash {{ clone-step.directory }}/chrome/install.sh"
+    shell: bash
     # stream_output: false
 
 # the deployments section allows you to provide configuration for deploying flows
