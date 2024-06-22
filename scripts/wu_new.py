@@ -427,3 +427,5 @@ def match_text(string, text, matchgroup):
 # main()
 # end = time.time()
 # print("Total time elapsed:", (end-start)//60, "m", math.ceil(((end-start)/60-(end-start)//60)*60), "s")
+
+wu_scraping()
