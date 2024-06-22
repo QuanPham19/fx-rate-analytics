@@ -42,6 +42,7 @@ pull:
     stream_output: false
 - prefect.deployments.steps.run_shell_script:
     script: echo "Hello World"
+    stream_output: true
     # stream_output: false
 
 # the deployments section allows you to provide configuration for deploying flows
