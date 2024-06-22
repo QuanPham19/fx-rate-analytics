@@ -1,12 +1,22 @@
-from scripts.auto import ExchangeRateAnalytics
-from scripts.wise_new import wise_scraping
-from scripts.wu_test import wu_scraping
+import os
+import re
+import pandas as pd
+import numpy as np
+from countryinfo import CountryInfo
+from prefect import task, flow
+from prefect_email import EmailServerCredentials, email_send_message
 
-<<<<<<< HEAD
+pd.options.mode.chained_assignment = None
+
+def clean_fee(fee):
+    match = re.search(r"[\d,]+(\.\d+)?", fee)
+    if match:
+        return float(match.group().replace(',', ''))
+
 class ExchangeRateAnalytics:
-    def __init__(self, wise_dir, wu_dir, corridor_dir, output_dir):
-        self.wise_dir = wise_dir
-        self.wu_dir = wu_dir
+    def __init__(self, wise_df, wu_df, corridor_dir, output_dir):
+        self.wise_df = wise_df
+        self.wu_df = wu_df
         self.corridor_dir = corridor_dir
         self.output_dir = output_dir
 
@@ -32,15 +42,19 @@ class ExchangeRateAnalytics:
 
         return df
     
-    def get_fx_data(self, input_dir, country_receive):
-        df = pd.read_csv(input_dir)
+    def get_fx_data(self, df, country_receive):
         df = df[df['country_receive']==country_receive]
+        df['service_fee'] = df['service_fee'].apply(clean_fee)
+        df['fx_rate_3'] = df['fx_rate_3'].apply(clean_fee)
+
+        df['ticket_size'] = df['ticket_size'].astype(str)
+        df['ticket_size'] = df['ticket_size'].apply(clean_fee)
 
         print(f'Processing data of {country_receive}...')
 
-        df['ticket_size'] = df['ticket_size'].astype(int)
-        df[['fx_rate_3', 'service_fee']] = df[['fx_rate_3', 'service_fee']].astype(float)
-        df['amount_receive'] = round( (df['ticket_size'] - df['service_fee']) * df['fx_rate_3'], 2)
+        # df['ticket_size'] = df['ticket_size'].astype(int)
+        # df[['fx_rate_3', 'service_fee']] = df[['fx_rate_3', 'service_fee']].astype(float)
+        df['amount_receive'] = round( (df['ticket_size'] - df['service_fee']) * df['fx_rate_3'], 4)
 
         df.sort_values(by=['country_receive', 'country_send'], inplace=True)
         return df
@@ -82,21 +96,20 @@ class ExchangeRateAnalytics:
             startcol += (3 + 2) 
 
     def run(self):
+        print('-------------------------------------------------')
+        print('Part 3/3: Process Excel and screenshots output...')
+        print('-------------------------------------------------')
+
         print('Current Directory:', os.getcwd())
         print('Currrent Excel directory:', self.output_dir)
         country_receive_list = self.get_corridor_data(self.corridor_dir)['Receiving country'].unique()
         with pd.ExcelWriter(self.output_dir, engine='openpyxl') as writer:
             for country in country_receive_list:
-                df_wise = self.get_fx_data(self.wise_dir, country)
-                df_wu = self.get_fx_data(self.wu_dir, country)
+                df_wise = self.get_fx_data(self.wise_df, country)
+                df_wu = self.get_fx_data(self.wu_df, country)
                 # bps_comparison(df_wise, df_wu)
                 self.excel_writer([df_wise, df_wu], country, writer)
                 print('Successfully write to Excel')
-
-        # credentials = EmailServerCredentials(
-        #     username='aminh6c.pmq@gmail.com',
-        #     password='wqbj lpcj ckoi lahr'
-        # )
 
         credentials = EmailServerCredentials(
             username='mastercard.fxanalytics@gmail.com',
@@ -104,7 +117,7 @@ class ExchangeRateAnalytics:
         )
         credentials.save('fx-analytics-block', overwrite=True)
         email_server_credentials = EmailServerCredentials.load('fx-analytics-block')
-        for email_address in ['aminh6c.pmq2@gmail.com', 'lulu.zheng@mastercard.com']:
+        for email_address in ['aminh6c.pmq2@gmail.com', 'elijahchiakaifeng@gmail.com', 'emwong84@gmail.com']:
             subject = email_send_message.with_options(name=f'email {email_address}').submit(
                 email_server_credentials=email_server_credentials,
                 subject='[FX Rate Analytics] Competitor Weekly Report',
@@ -113,19 +126,3 @@ class ExchangeRateAnalytics:
                 attachments=['output.xlsx']
             )
         return writer
-=======
-wise_df = wise_scraping()
-wu_df = wu_scraping()
->>>>>>> feature/test
-
-@flow(log_prints=True)
-def run_exchange_rate_analytics():
-    test = ExchangeRateAnalytics(
-        wise_df=wise_df,
-        wu_df=wu_df,
-        corridor_dir='input/sending_receiving_country_pair.xlsx',
-        output_dir='output.xlsx'
-    )
-    test.run()
-
-    
