@@ -1,4 +1,5 @@
 import os
+import re
 import pandas as pd
 import numpy as np
 from countryinfo import CountryInfo
@@ -8,7 +9,9 @@ from prefect_email import EmailServerCredentials, email_send_message
 pd.options.mode.chained_assignment = None
 
 def clean_fee(fee):
-    return float(''.join(filter(lambda x: x.isdigit() or x == '.', fee)))
+    match = re.search(r"[\d,]+(\.\d+)?", fee)
+    if match:
+        return float(match.group().replace(',', ''))
 
 class ExchangeRateAnalytics:
     def __init__(self, wise_df, wu_df, corridor_dir, output_dir):

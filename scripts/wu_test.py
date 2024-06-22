@@ -61,7 +61,7 @@ def wu_scraping():
                 extracted_data = extract_data(driver, url, send_path, receive_path)
                 print(extracted_data)
                 
-                if None not in extract_data:
+                if None not in extracted_data:
                     output_data.append(extracted_data)
                 
         driver.quit()
