@@ -129,6 +129,7 @@ def initialize_chrome_driver(chrome_path, driver_path):
     options.add_argument('--no-sandbox')
     options.add_argument('--headless')
     options.add_argument('--disable-dev-shm-usage')
+    options.add_argument("--window-size=1920,1080")
 
     # Set up ChromeDriver service
     service = Service(executable_path=driver_path)

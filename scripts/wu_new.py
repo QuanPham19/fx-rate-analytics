@@ -23,7 +23,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 #ui2: ['my','jp','sg','hk','us', 'gb']
 
 
-def main():
+def wu_scraping():
     # TO_ADJUST: Change directory to directory of interest 
     # os.chdir('C:\\Users\EMIL0013\Downloads\web-scraper-v1.3')
     # Reads the corridor-pair table in excel file and converts to pandas dataframe
@@ -43,7 +43,7 @@ def main():
     # Construct the file directory path where screenshots will be saved
     file_dir = path.join(os.getcwd(), f"WU_exports_{time_export}")
     # Create the directory to store the screenshots if it has not existed yet
-    os.makedirs(file_dir, exist_ok=True)  
+    # os.makedirs(file_dir, exist_ok=True)  
     
     # Define a list of all country names from pycountry for matching with the ones in the dataframe df
     all_pycountry_countries = [country.name for country in pycountry.countries]
@@ -58,7 +58,7 @@ def main():
     output_data=[]
     
     # Iterate through each corridor in the dataframe 
-    for i in range(11, 15):
+    for i in range(1, 5):
         # Locates the sending country of the corridor pair
         sending_country = df.loc[i,'Sending country']
         # Gets the 2-letter country isocode for each sending country in the dataframe
@@ -91,6 +91,7 @@ def main():
                 url = f"https://www.westernunion.com/{send_path}/en/web/send-money/start?ReceiveCountry={receive_path}&ISOCurrency={receive_curr_path}&SendAmount={ticket_size}&FundsOut=BA&FundsIn=BA"
                 driver.get(url)
                 
+                print(url)
                 # # if the ticket size exceeds the website limit, readjust the ticket size to the website limit 
                 # #checks only the last ticket column
                 # if j == len(df.filter(like='ticket').columns) - 1:
@@ -142,6 +143,7 @@ def initialize_chrome_driver(chrome_path, driver_path):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-browser-side-navigation")
     options.add_argument("--disable-gpu")
+    options.add_argument("--window-size=1920,1080")
 
     # Set up ChromeDriver service
     service = Service(executable_path=driver_path)
@@ -326,7 +328,7 @@ def ui2_select_bank_payment(driver, funds_in_or_out):
 
 def ui2_scrape_text(driver, url):
     
-    wait = WebDriverWait(driver, 20)
+    wait = WebDriverWait(driver, 10)
     
     try:
         wait.until((EC.presence_of_element_located((By.XPATH, "//div[contains(@class,'TotalPayout_')]"))))
@@ -335,7 +337,7 @@ def ui2_scrape_text(driver, url):
         pass
     
     ui2_adjust_payment_options(driver)
-    time.sleep(5)
+    time.sleep(10)
     
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     match_adjusted_ticket_size = soup.find('input', id = "input-estimate_details_sender_field")['value']
@@ -376,8 +378,9 @@ def ui2_scrape_text(driver, url):
 
 
 def ui1_scrape_text(driver, url):
+    print('This is UI 1...')
     
-    wait = WebDriverWait(driver, 20)
+    wait = WebDriverWait(driver, 10)
 
     try:
         wait.until((EC.text_to_be_present_in_element((By.CSS_SELECTOR, f".{'trxn-summary.sum-wid-ff'}"), 'Exchange Rate')))
@@ -386,7 +389,7 @@ def ui1_scrape_text(driver, url):
         pass
 
     ui1_adjust_payment_options(driver)
-    time.sleep(5)
+    time.sleep(10)
     
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     container = soup.find('section', class_='trxn-summary sum-wid-ff')
@@ -419,8 +422,8 @@ def match_text(string, text, matchgroup):
         return re.search(string, text).group(matchgroup)
     return None
 
-import math
-start = time.time()
-main()
-end = time.time()
-print("Total time elapsed:", (end-start)//60, "m", math.ceil(((end-start)/60-(end-start)//60)*60), "s")
+# import math
+# start = time.time()
+# main()
+# end = time.time()
+# print("Total time elapsed:", (end-start)//60, "m", math.ceil(((end-start)/60-(end-start)//60)*60), "s")
