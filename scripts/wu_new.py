@@ -58,7 +58,7 @@ def wu_scraping():
     output_data=[]
     
     # Iterate through each corridor in the dataframe 
-    for i in range(1, 5):
+    for i in range(len(df)):
         # Locates the sending country of the corridor pair
         sending_country = df.loc[i,'Sending country']
         # Gets the 2-letter country isocode for each sending country in the dataframe
