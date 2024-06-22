@@ -5,7 +5,7 @@ from scripts.wu_test import wu_scraping
 wise_df = wise_scraping()
 wu_df = wu_scraping()
 
-# @flow(log_prints=True)
+@flow(log_prints=True)
 def run_exchange_rate_analytics():
     test = ExchangeRateAnalytics(
         wise_df=wise_df,
@@ -15,5 +15,4 @@ def run_exchange_rate_analytics():
     )
     test.run()
 
-run_exchange_rate_analytics()
     
