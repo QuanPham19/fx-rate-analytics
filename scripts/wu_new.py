@@ -91,7 +91,6 @@ def wu_scraping():
                 url = f"https://www.westernunion.com/{send_path}/en/web/send-money/start?ReceiveCountry={receive_path}&ISOCurrency={receive_curr_path}&SendAmount={ticket_size}&FundsOut=BA&FundsIn=BA"
                 driver.get(url)
                 
-                print(url)
                 # # if the ticket size exceeds the website limit, readjust the ticket size to the website limit 
                 # #checks only the last ticket column
                 # if j == len(df.filter(like='ticket').columns) - 1:
@@ -377,9 +376,7 @@ def ui2_scrape_text(driver, url):
             #calculated_service_fee] 
 
 
-def ui1_scrape_text(driver, url):
-    print('This is UI 1...')
-    
+def ui1_scrape_text(driver, url):    
     wait = WebDriverWait(driver, 10)
 
     try:
