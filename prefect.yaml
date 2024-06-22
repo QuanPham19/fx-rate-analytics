@@ -11,15 +11,21 @@ build:
 - prefect.deployments.steps.run_shell_script:
     id: build-1
     script: sudo apt install wget
+    stream_output: false
 - prefect.deployments.steps.run_shell_script:
     id: build-2
     script: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    stream_output: false
 - prefect.deployments.steps.run_shell_script:
     id: build-3
     script: sudo apt-get install -f
+    stream_output: false
 - prefect.deployments.steps.run_shell_script:
     id: build-4
-    script: echo "Hello World"
+    script: google-chrome --version
+- prefect.deployments.steps.run_shell_script:
+    id: build-5
+    script: rm google-chrome-stable_current_amd64.deb
 
 # push section allows you to manage if and how this project is uploaded to remote locations
 push: null
