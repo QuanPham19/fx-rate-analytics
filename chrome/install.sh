@@ -1,3 +1,4 @@
+lsb_release -a
 apt-get install sudo
 sudo apt update
 sudo apt install wget
