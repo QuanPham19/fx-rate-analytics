@@ -58,7 +58,7 @@ def wise_scraping():
         driver.get(url)
         webpage = WebpageInteractions(driver)
 
-        for optiontoclick in options_subset[:1]:
+        for optiontoclick in options_subset:
             webpage.click_option(optiontoclick, 0)
 
             try:
@@ -425,7 +425,7 @@ class ProcessScrapedOutput:
     def reformat_to_quan_desired_dataframe(df):
         # Assuming df is your initial DataFrame
         df = pd.DataFrame(df).set_index('Title').T
-        
+
         # Define the columns in the desired order
         desired_columns = ['You send exactly', 'country_receive', 'company_name', 'ticket_size',
                            'timestamp', 'Total amount we’ll convert', 'Our fee']

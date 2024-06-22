@@ -69,7 +69,7 @@ def wu_scraping():
 
     output_data = []
     
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=5) as executor:
         future_to_corridor = {executor.submit(process_corridor, i): i for i in range(len(df))}
         for future in as_completed(future_to_corridor):
             try:
