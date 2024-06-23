@@ -9,7 +9,8 @@ import subprocess
 
 @task(log_prints=True)
 def get_os():
-    command = "cat /etc/*-release"
+    # command = "cat /etc/*-release"
+    command = "apt update"
     try:
         result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         print(result.stdout)
