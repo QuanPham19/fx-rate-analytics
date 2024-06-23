@@ -128,9 +128,6 @@ def scrape_text(driver):
 
 def initialize_chrome_driver(chrome_path, driver_path):
     # Set up Chrome options
-    print('This is chrome path: ', chrome_path)
-    print('This is driver path: ', driver_path)
-
     options = Options()
     options.binary_location = chrome_path
     options.add_argument('--no-sandbox')
