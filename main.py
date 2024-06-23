@@ -8,19 +8,22 @@ import subprocess
 # wu_df = wu_scraping()
 
 @task(log_prints=True)
-def get_os():
-    # command = "cat /etc/*-release"
-    command = "apt install sudo"
+def run_multiple_commands():
+    commands = [
+        "su - root",  
+        "sudo --version"
+    ]
     try:
-        result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        print(result.stdout)
-    
+        for command in commands:
+            result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            print(f"Command: {command}\nOutput:\n{result.stdout}")
+
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
 
 @flow(log_prints=True)
 def run_exchange_rate_analytics():
-    get_os()
+    run_multiple_commands()
     test = ExchangeRateAnalytics(
         wise_df=wise_df,
         wu_df=wu_df,
