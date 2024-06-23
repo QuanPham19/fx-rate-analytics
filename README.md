@@ -2,7 +2,7 @@
 
 This project aims to scrape FX rate data from multiple payment websites. We mainly use Selenium and Chrome Driver for extracting data, while Pandas and Prefect can be used for data processing and automation. 
 
-The process is able to provide users with real-time report Excel file and screenshots Zip file. Samples are given in the output folder of this project.
+The process is able to provide users with real-time report Excel file and screenshots Zip file. Extracted data is given in the sample folder, while email attachments are given in the output folder of this project.
 
 ## 1. Clone repository
 ```
