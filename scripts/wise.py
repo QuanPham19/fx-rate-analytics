@@ -23,7 +23,7 @@ def wise_scraping():
 
     # Path to the web driver (adjust if necessary)
     driver_path = 'chrome/chromedriver'
-    chrome_path = '/usr/bin/google-chrome'
+    chrome_path = 'chrome/chrome/google-chrome'
     url = 'https://wise.com/sg/send-money/'
 
     sendingandreceivingdf = read_sending_receiving_country_pair_excel()
