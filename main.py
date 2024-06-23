@@ -1,6 +1,7 @@
 from scripts.auto import ExchangeRateAnalytics
 from scripts.wise import wise_scraping
 from scripts.wu import wu_scraping
+from prefect import task, flow
 
 # wise_df = wise_scraping()
 # wu_df = wu_scraping()
