@@ -4,14 +4,10 @@ from scripts.wu import wu_scraping
 from prefect import task, flow
 import subprocess
 
-# wise_df = wise_scraping()
-# wu_df = wu_scraping()
-
 @task(log_prints=True)
 def run_multiple_commands():
     commands = [
         # "su - root",  
-        "apt install sudo -y",
         "apt-get install -y libglib2.0-0=2.50.3-2 \
             libnss3=2:3.26.2-1.1+deb9u1 \
             libgconf-2-4=3.2.6-4+b1 \
@@ -28,6 +24,8 @@ def run_multiple_commands():
 @flow(log_prints=True)
 def run_exchange_rate_analytics():
     run_multiple_commands()
+    wise_df = wise_scraping()
+    wu_df = wu_scraping()
     test = ExchangeRateAnalytics(
         wise_df=wise_df,
         wu_df=wu_df,
