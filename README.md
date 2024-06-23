@@ -21,13 +21,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## 4. Prefect interaction
+## 4. Run the workflow
 ```
 prefect cloud login
 prefect deploy main.py:run_exchange_rate_analytics
-```
-
-## 5. Run the workflow
-```
 python main.py
 ```
+
