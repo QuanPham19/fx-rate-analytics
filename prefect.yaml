@@ -28,7 +28,7 @@ prefect-version: 2.19.5
 #     script: rm google-chrome-stable_current_amd64.deb
 
 # push section allows you to manage if and how this project is uploaded to remote locations
-push: null
+push:
 
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
@@ -38,7 +38,7 @@ pull:
     branch: main
     include_submodules: true
 - prefect.deployments.steps.pip_install_requirements:
-    directory: "{{ clone-step.directory }}"
+    directory: '{{ clone-step.directory }}'
     requirements_file: requirements.txt
     stream_output: false
 # - prefect.deployments.steps.run_shell_script:
@@ -49,16 +49,13 @@ pull:
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
 - name: fx-analytics-deployment
-  version: null
+  version:
   tags: []
-  description: null
+  description:
   entrypoint: main.py:run_exchange_rate_analytics
   parameters: {}
   work_pool:
     name: fx-process
-    work_queue_name: null
+    work_queue_name:
     job_variables: {}
-  schedules:
-  - rrule: FREQ=WEEKLY;BYDAY=MO
-    timezone: UTC
-    active: true
+  schedules: []
