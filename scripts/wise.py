@@ -22,8 +22,8 @@ def wise_scraping():
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     # Path to the web driver (adjust if necessary)
-    driver_path = 'chrome/chromedriver'
-    chrome_path = 'chrome/chrome/google-chrome'
+    driver_path = os.path.join(os.getcwd(), 'chrome/chromedriver')
+    chrome_path = os.path.join(os.getcwd(), 'chrome/chrome/google-chrome')
     url = 'https://wise.com/sg/send-money/'
 
     sendingandreceivingdf = read_sending_receiving_country_pair_excel()
