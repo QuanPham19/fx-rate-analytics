@@ -18,9 +18,13 @@ def run_multiple_commands():
 @flow(log_prints=True)
 def run_exchange_rate_analytics():
     run_multiple_commands()
+
+    driver_path = 'chrome/chromedriver'
+    chrome_path = 'chrome/chrome/google-chrome'
     
-    wise_df = wise_scraping()
-    wu_df = wu_scraping()
+    wise_df = wise_scraping(driver_path, chrome_path)
+    wu_df = wu_scraping(driver_path, chrome_path)
+    
     test = ExchangeRateAnalytics(
         wise_df=wise_df,
         wu_df=wu_df,

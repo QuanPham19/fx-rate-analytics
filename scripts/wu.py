@@ -18,7 +18,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-def wu_scraping():
+def wu_scraping(driver_path, chrome_path):
     print('---------------------------------------------')
     print('Part 2/3: Scraping data from Western Union...')
     print('---------------------------------------------')    
@@ -33,8 +33,8 @@ def wu_scraping():
 
     all_pycountry_countries = [country.name for country in pycountry.countries]
 
-    driver_path = os.path.join(os.getcwd(), 'chrome/chromedriver')
-    chrome_path = os.path.join(os.getcwd(), 'chrome/chrome/google-chrome')
+    driver_path = os.path.join(os.getcwd(), driver_path)
+    chrome_path = os.path.join(os.getcwd(), chrome_path)
 
     def process_corridor(i):
         driver = initialize_chrome_driver(chrome_path, driver_path)

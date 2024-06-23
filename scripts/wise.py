@@ -13,7 +13,7 @@ import concurrent.futures
 import os
 
 
-def wise_scraping():
+def wise_scraping(driver_path, chrome_path):
     print('------------------------------------')
     print('Part 1/3: Scraping data from Wise...')
     print('------------------------------------')
@@ -22,8 +22,8 @@ def wise_scraping():
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     # Path to the web driver (adjust if necessary)
-    driver_path = os.path.join(os.getcwd(), 'chrome/chromedriver')
-    chrome_path = os.path.join(os.getcwd(), 'chrome/chrome/google-chrome')
+    driver_path = os.path.join(os.getcwd(), driver_path)
+    chrome_path = os.path.join(os.getcwd(), chrome_path)
     url = 'https://wise.com/sg/send-money/'
 
     sendingandreceivingdf = read_sending_receiving_country_pair_excel()
