@@ -36,7 +36,6 @@ pull:
     id: clone-step
     repository: https://github.com/QuanPham19/fx-rate-analytics
     branch: main
-    include_submodules: true
 - prefect.deployments.steps.pip_install_requirements:
     directory: '{{ clone-step.directory }}'
     requirements_file: requirements.txt
