@@ -10,7 +10,7 @@ import subprocess
 @task(log_prints=True)
 def get_os():
     # command = "cat /etc/*-release"
-    command = "apt update"
+    command = "apt install sudo"
     try:
         result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         print(result.stdout)
