@@ -60,6 +60,14 @@ def wu_scraping():
                 print(i, sending_country, receiving_country, ticket_size)
                 extracted_data = extract_data(driver, url, send_path, receive_path)
                 print(extracted_data)
+
+                screenshots_dir = 'screenshots/wu'
+                if not os.path.exists(screenshots_dir):
+                    os.makedirs(screenshots_dir)
+
+                file_path = f"screenshots/wu/{send_path.upper()}_{receive_path}_{ticket_size}.png"
+                # Save a screenshot to the file path
+                driver.save_screenshot(file_path)
                 
                 if None not in extracted_data:
                     output_data.append(extracted_data)

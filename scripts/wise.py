@@ -81,11 +81,11 @@ def wise_scraping():
                         for col in ticket_size_columns:
                             ticket_size = values[col]
                             worker_df = process_currency(ticket_size, timestamp, webpage, worker_df)
-                            # webpage.take_screenshot(optiontoclick, recipientoption)
+                            webpage.take_screenshot(optiontoclick, recipientoption, ticket_size)
                     else:
                         ticket_size = 1000
                         worker_df = process_currency(ticket_size, timestamp, webpage, worker_df)
-                        # webpage.take_screenshot(optiontoclick, recipientoption)
+                        webpage.take_screenshot(optiontoclick, recipientoption, ticket_size)
 
             except IndexError as e:
                 ticket_size = 1000
@@ -262,17 +262,17 @@ class WebpageInteractions:
         # Essential sleep to ensure the value change is processed
         time.sleep(1)
 
-    def take_screenshot(self,optiontoclick, recipientoption):
+    def take_screenshot(self,optiontoclick, recipientoption, ticket_size):
         # Scroll down the page so that the white box is in view
         self.driver.execute_script("window.scrollTo(0, 500);")
 
         # Create the screenshots directory if it does not exist
-        screenshots_dir = 'screenshots'
+        screenshots_dir = 'screenshots/wise'
         if not os.path.exists(screenshots_dir):
             os.makedirs(screenshots_dir)
 
         # takes screenshot and stores it in the screen shot folder
-        screenshot_path = f'screenshots/{optiontoclick}_to_{recipientoption}.png'
+        screenshot_path = f'screenshots/wise/{optiontoclick}_{recipientoption}_{ticket_size}.png'
 
         #take the screenshot
         self.driver.save_screenshot(screenshot_path)

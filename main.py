@@ -6,9 +6,7 @@ import subprocess
 
 @task(log_prints=True)
 def run_multiple_commands():
-    commands = [
-        "cat /etc/*-release"
-    ]
+    commands = ["cat /etc/*-release"]
     try:
         for command in commands:
             result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -20,13 +18,16 @@ def run_multiple_commands():
 @flow(log_prints=True)
 def run_exchange_rate_analytics():
     run_multiple_commands()
+    
     wise_df = wise_scraping()
     wu_df = wu_scraping()
     test = ExchangeRateAnalytics(
         wise_df=wise_df,
         wu_df=wu_df,
         corridor_dir='input/sending_receiving_country_pair.xlsx',
-        output_dir='output.xlsx'
+        output_dir='output.xlsx',
+        screenshot_dir='screenshots',
+        screenshot_zip='screenshots.zip'
     )
     test.run()
 

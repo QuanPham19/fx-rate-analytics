@@ -2,6 +2,7 @@ import os
 import re
 import pandas as pd
 import numpy as np
+import shutil
 from countryinfo import CountryInfo
 from prefect import task, flow
 from prefect_email import EmailServerCredentials, email_send_message
@@ -14,11 +15,13 @@ def clean_fee(fee):
         return float(match.group().replace(',', ''))
 
 class ExchangeRateAnalytics:
-    def __init__(self, wise_df, wu_df, corridor_dir, output_dir):
+    def __init__(self, wise_df, wu_df, corridor_dir, output_dir, screenshot_dir, screenshot_zip):
         self.wise_df = wise_df
         self.wu_df = wu_df
         self.corridor_dir = corridor_dir
         self.output_dir = output_dir
+        self.screenshot_dir = screenshot_dir
+        self.screenshot_zip = screenshot_zip
 
     def country_name_to_currency(self, name):
         country = CountryInfo(name)
@@ -95,6 +98,10 @@ class ExchangeRateAnalytics:
             curr_df.to_excel(writer, sheet_name=country_receive, startrow=startrow, startcol=startcol, index=True)
             startcol += (3 + 2) 
 
+    def create_zip(self, folder_to_zip, output_zip_file):
+        shutil.make_archive(output_zip_file.replace('.zip', ''), 'zip', folder_to_zip)
+        print(f"Folder {folder_to_zip} has been zipped to {output_zip_file}")
+
     def run(self):
         print('-------------------------------------------------')
         print('Part 3/3: Process Excel and screenshots output...')
@@ -111,6 +118,8 @@ class ExchangeRateAnalytics:
                 self.excel_writer([df_wise, df_wu], country, writer)
                 print('Successfully write to Excel')
 
+        self.create_zip(self.screenshot_dir, self.screenshot_zip)
+
         credentials = EmailServerCredentials(
             username='mastercard.fxanalytics@gmail.com',
             password='elap izdw vzmu ubet'
@@ -123,6 +132,6 @@ class ExchangeRateAnalytics:
                 subject='[FX Rate Analytics] Competitor Weekly Report',
                 msg='Please find the report made by Elijah, Emily and Quan as in the attached file. Best regards.',
                 email_to=email_address,
-                attachments=['output.xlsx']
+                attachments=[self.output_dir, self.screenshot_zip]
             )
         return writer
