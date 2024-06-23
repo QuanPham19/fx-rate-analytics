@@ -2,30 +2,30 @@
 
 This project aims to scrape FX rate data from multiple payment websites. The automation process provide users with real-time report Excel file and screenshots Zip file.
 
-## Clone repository
+## 1. Clone repository
 ```
 git clone https://github.com/QuanPham19/fx-rate-analytics.git
 ```
 
-## Chrome installation (OS-based)
+## 2. Chrome installation (OS-based)
 ```
 https://googlechromelabs.github.io/chrome-for-testing/
 ```
 
-## Requirement packages
+## 3. Requirement packages
 ```
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Prefect interaction
+## 4. Prefect interaction
 ```
 prefect cloud login
 prefect deploy main.py:run_exchange_rate_analytics
 ```
 
-## Run the workflow
+## 5. Run the workflow
 ```
 python main.py
 ```
