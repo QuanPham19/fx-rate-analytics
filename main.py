@@ -3,8 +3,8 @@ from scripts.wise import wise_scraping
 from scripts.wu import wu_scraping
 from prefect import task, flow
 
-wise_df = wise_scraping()
-wu_df = wu_scraping()
+# wise_df = wise_scraping()
+# wu_df = wu_scraping()
 
 @task(log_prints=True)
 def get_os():
