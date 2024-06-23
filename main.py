@@ -29,9 +29,9 @@ def run_exchange_rate_analytics():
         wise_df=wise_df,
         wu_df=wu_df,
         corridor_dir='input/sending_receiving_country_pair.xlsx',
-        output_dir='output.xlsx',
+        output_dir='output/output.xlsx',
         screenshot_dir='screenshots',
-        screenshot_zip='screenshots.zip'
+        screenshot_zip='output/screenshots.zip'
     )
     test.run()
 
