@@ -102,6 +102,25 @@ class ExchangeRateAnalytics:
         shutil.make_archive(output_zip_file.replace('.zip', ''), 'zip', folder_to_zip)
         print(f"Folder {folder_to_zip} has been zipped to {output_zip_file}")
 
+    def excel_format(self, file_path):
+        wb = openpyxl.load_workbook(file_path)
+        for sheet in wb.worksheets:
+            for col in sheet.columns:
+                max_length = 0
+                column = col[0].column_letter 
+                for cell in col:
+                    try:
+                        if len(str(cell.value)) > max_length:
+                            max_length = len(str(cell.value))
+                    except:
+                        pass
+                adjusted_width = (max_length + 2)
+                sheet.column_dimensions[column].width = adjusted_width
+
+                for cell in col:
+                    cell.alignment = Alignment(horizontal='center')
+        wb.save(file_path)
+
     def run(self):
         print('-------------------------------------------------')
         print('Part 3/3: Process Excel and screenshots output...')
@@ -119,6 +138,7 @@ class ExchangeRateAnalytics:
                 print('Successfully write to Excel')
 
         self.create_zip(self.screenshot_dir, self.screenshot_zip)
+        self.excel_format(self.output_dir)
 
         credentials = EmailServerCredentials(
             username='mastercard.fxanalytics@gmail.com',
