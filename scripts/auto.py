@@ -64,12 +64,33 @@ class ExchangeRateAnalytics:
         df['amount_receive'] = round( (df['ticket_size'] - df['service_fee']) * df['fx_rate_3'], 4)
 
         df.sort_values(by=['country_receive', 'country_send'], inplace=True)
+        df['bps'] = 0
+
         return df
     
     def bps_comparison(self, df_target, df_compare):
-        df_target['bps'] = 0
-        df_compare['bps'] = 10000 * (df_target['fx_rate_3'].values / df_compare['fx_rate_3'].values - 1)
-        df_compare['bps'] = df_compare['bps'].apply(round)
+        for index, row in df_compare.iterrows():
+
+            print('Compare: ', row['fx_rate_3'])
+            compare = row['fx_rate_3']
+            if np.isnan(compare):
+                continue
+
+            condition = row[['country_send', 'country_receive', 'ticket_size']].values
+
+            filter = df_target[(df_target['country_send']==condition[0]) & (df_target['country_receive']==condition[1]) & (df_target['ticket_size']==condition[2])]
+            if len(filter) == 0:
+                target = compare
+            else:
+                target = filter['fx_rate_3'].values[0]
+                if np.isnan(target):
+                    target = compare
+            print('Target: ', target)
+
+            bps = round(10000 * (target / compare - 1))
+            print('Bps: ', bps)
+
+            df_compare.loc[index, 'bps'] = bps
 
     def get_unit_df(self, df_list, country_send, ticket_size):
         concat_list = list()
@@ -138,7 +159,10 @@ class ExchangeRateAnalytics:
                 df_wise = self.get_fx_data(self.wise_df, country)
                 df_wu = self.get_fx_data(self.wu_df, country)
                 df_mc = self.get_fx_data(self.mc_df, country)
-                # bps_comparison(df_wise, df_wu)
+
+                self.bps_comparison(df_mc, df_wu)
+                self.bps_comparison(df_mc, df_wise)
+
                 self.excel_writer([df_mc, df_wise, df_wu], country, writer)
                 print('Successfully write to Excel')
 

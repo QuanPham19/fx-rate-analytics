@@ -2943,3 +2943,536 @@
 [0629/033518.625738:ERROR:gl_utils.cc(424)] [.WebGL-0x345005b6bf00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
 [0629/033535.851565:ERROR:gl_utils.cc(424)] [.WebGL-0x1a500676b100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
 [0629/033542.104383:ERROR:gl_utils.cc(424)] [.WebGL-0x3de0053edb00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/062838.156776:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/062843.891909:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/062843.983031:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/062844.017122:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/062844.049242:ERROR:command_buffer_proxy_impl.cc(132)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[0629/062844.091221:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/062844.093177:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/062844.155855:ERROR:command_buffer_proxy_impl.cc(132)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[0629/062844.163977:ERROR:command_buffer_proxy_impl.cc(132)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[0629/062903.661692:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/062904.542135:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/062905.282436:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/062934.505552:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/063023.408686:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063023.723795:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063023.733604:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063023.754199:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063023.828448:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063030.046701:ERROR:gl_utils.cc(424)] [.WebGL-0x139001b91400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063030.953818:ERROR:gl_utils.cc(424)] [.WebGL-0x18480050e200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063031.074124:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063031.376106:ERROR:gl_utils.cc(424)] [.WebGL-0x2ffc00dacd00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063031.914564:ERROR:gl_utils.cc(424)] [.WebGL-0x32b800db5c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063032.178276:ERROR:gl_utils.cc(424)] [.WebGL-0x240803b68600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063032.995604:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063033.015221:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063033.092646:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063033.229814:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063059.438790:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063100.175420:ERROR:gl_utils.cc(424)] [.WebGL-0x139005cb7800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063102.565897:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/063104.532105:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063105.564967:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063105.657283:ERROR:gl_utils.cc(424)] [.WebGL-0x32b805529b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063106.101003:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063106.836935:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063107.977462:ERROR:gl_utils.cc(424)] [.WebGL-0x2ffc0732f100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063110.074859:ERROR:gl_utils.cc(424)] [.WebGL-0x240807089b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063110.417830:ERROR:gl_utils.cc(424)] [.WebGL-0x18480597c600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063121.215097:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063121.917231:ERROR:gl_utils.cc(424)] [.WebGL-0x13900515aa00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063128.837223:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063130.197572:ERROR:gl_utils.cc(424)] [.WebGL-0x32b80294ff00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063134.064894:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063134.499570:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063135.243424:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063135.805406:ERROR:gl_utils.cc(424)] [.WebGL-0x240807089400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063135.942417:ERROR:gl_utils.cc(424)] [.WebGL-0x2ffc0050aa00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063136.498450:ERROR:gl_utils.cc(424)] [.WebGL-0x184805091c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063142.150214:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063145.778893:ERROR:gl_utils.cc(424)] [.WebGL-0x153c04bcbf00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063145.922557:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063152.996973:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063153.223349:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063153.483713:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063153.707696:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063153.944657:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063155.915503:ERROR:gl_utils.cc(424)] [.WebGL-0x2df403881c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063157.773938:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063159.315320:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063201.328835:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063201.797077:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063202.911519:ERROR:gl_utils.cc(424)] [.WebGL-0x1aa801c81b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063202.972586:ERROR:gl_utils.cc(424)] [.WebGL-0x1aa80050bf00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063205.086872:ERROR:gl_utils.cc(424)] [.WebGL-0x2340033f2900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063205.911773:ERROR:gl_utils.cc(424)] [.WebGL-0x25d002316900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063207.927618:WARNING:spdy_session.cc(2934)] Received WINDOW_UPDATE for invalid stream 25
+[0629/063207.948070:WARNING:spdy_session.cc(2979)] Received HEADERS for invalid stream 25
+[0629/063208.615642:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063208.925682:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063212.506573:ERROR:gl_utils.cc(424)] [.WebGL-0x153c06266300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063213.657573:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063214.729406:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063216.233579:ERROR:gl_utils.cc(424)] [.WebGL-0x2df4074c0e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063218.190788:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/063221.600402:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063224.806033:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/063226.699609:ERROR:gl_utils.cc(424)] [.WebGL-0x1aa806746a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063226.768463:ERROR:gl_utils.cc(424)] [.WebGL-0x1aa806747800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/063227.935091:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063232.145620:ERROR:gl_utils.cc(424)] [.WebGL-0x2340033eea00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063234.411565:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063235.045744:ERROR:gl_utils.cc(424)] [.WebGL-0x25d005db3f00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063236.474160:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063237.834761:ERROR:gl_utils.cc(424)] [.WebGL-0x2df4074c2a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063238.809179:ERROR:gl_utils.cc(424)] [.WebGL-0x153c08da7f00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063239.901921:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063243.838094:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063249.175473:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063251.269769:ERROR:gl_utils.cc(424)] [.WebGL-0x234008e41500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063251.423652:ERROR:gl_utils.cc(424)] [.WebGL-0x23400541e200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/063253.972302:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063257.867557:ERROR:gl_utils.cc(424)] [.WebGL-0x25d005db0000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063259.308381:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063300.499886:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063301.058814:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063301.642149:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063301.883917:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063302.326114:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063302.631124:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063302.915971:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063304.648240:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063305.993580:ERROR:gl_utils.cc(424)] [.WebGL-0x2d4001f36a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063306.273623:ERROR:gl_utils.cc(424)] [.WebGL-0x39b802f2b800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063307.598607:ERROR:gl_utils.cc(424)] [.WebGL-0x1d400273a300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063308.251134:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063313.125862:ERROR:gl_utils.cc(424)] [.WebGL-0x127403643800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063313.968369:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063315.077495:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063316.869823:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063317.802370:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063317.901989:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063321.093330:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063324.511625:ERROR:gl_utils.cc(424)] [.WebGL-0x2fe000fb4700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063325.323557:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063335.970432:ERROR:gl_utils.cc(424)] [.WebGL-0x39b8058a4d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063338.047307:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063338.273414:ERROR:gl_utils.cc(424)] [.WebGL-0x1d4004249400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063338.365338:WARNING:spdy_session.cc(2934)] Received WINDOW_UPDATE for invalid stream 15
+[0629/063340.256324:ERROR:gl_utils.cc(424)] [.WebGL-0x2d40065e8600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063342.979415:ERROR:gl_utils.cc(424)] [.WebGL-0x1274069da200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063345.519309:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063346.940056:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063348.888373:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063355.416060:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063355.517409:ERROR:gl_utils.cc(424)] [.WebGL-0x39b8087d7100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063355.701418:ERROR:gl_utils.cc(424)] [.WebGL-0x39b8058a2a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/063357.042122:ERROR:gl_utils.cc(424)] [.WebGL-0x2fe008e0ce00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063358.293782:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063403.974176:ERROR:gl_utils.cc(424)] [.WebGL-0x1d4008715c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063404.043318:ERROR:gl_utils.cc(424)] [.WebGL-0x1d400273aa00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/063404.473000:ERROR:gl_utils.cc(424)] [.WebGL-0x2d40065ea900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063404.717482:ERROR:gl_utils.cc(424)] [.WebGL-0x2d4001f35500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/063406.002198:ERROR:gl_utils.cc(424)] [.WebGL-0x12740177c000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063408.971547:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063412.545424:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063413.165729:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063421.407928:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063421.703885:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063422.396232:ERROR:gl_utils.cc(424)] [.WebGL-0x2fe007596a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063425.088879:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063425.228743:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063425.272892:ERROR:gl_utils.cc(424)] [.WebGL-0x372c06c54000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063429.584135:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063429.609542:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063430.082316:ERROR:gl_utils.cc(424)] [.WebGL-0x2e8c047ac000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063430.506327:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063436.412273:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063437.189316:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063437.447957:ERROR:gl_utils.cc(424)] [.WebGL-0x1f5001d8aa00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063437.553808:ERROR:gl_utils.cc(424)] [.WebGL-0x2e8401419b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063444.805722:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063447.144632:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063447.278427:ERROR:gl_utils.cc(424)] [.WebGL-0x172803f2f800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063453.923253:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063454.886822:ERROR:gl_utils.cc(424)] [.WebGL-0x372c07787100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063455.898605:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063457.956049:ERROR:gl_utils.cc(424)] [.WebGL-0x2e8c064ca300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063459.531394:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063459.587595:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063500.928027:ERROR:gl_utils.cc(424)] [.WebGL-0x1f50091e2a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063501.069494:ERROR:gl_utils.cc(424)] [.WebGL-0x2e8404fee200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063504.332786:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/063504.336150:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/063507.574499:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063508.570663:ERROR:gl_utils.cc(424)] [.WebGL-0x1728058df100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063510.394866:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/063517.185284:WARNING:spdy_session.cc(2934)] Received WINDOW_UPDATE for invalid stream 43
+[0629/063517.202717:WARNING:spdy_session.cc(2979)] Received HEADERS for invalid stream 43
+[0629/063517.720140:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063518.279767:ERROR:gl_utils.cc(424)] [.WebGL-0x372c00f80d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063519.396655:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063520.318877:ERROR:gl_utils.cc(424)] [.WebGL-0x2e8c05820d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063522.282015:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063523.022815:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063523.115104:ERROR:gl_utils.cc(424)] [.WebGL-0x2e8405aedc00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063524.021654:ERROR:gl_utils.cc(424)] [.WebGL-0x1f50070f1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063528.212361:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063528.951918:ERROR:gl_utils.cc(424)] [.WebGL-0x1728058e2900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063538.398415:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063538.948773:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/063538.969012:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/063540.261766:ERROR:gl_utils.cc(424)] [.WebGL-0x33300048e900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063541.158802:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063544.085439:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063544.470658:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063544.593889:ERROR:gl_utils.cc(424)] [.WebGL-0x283400489500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063545.774098:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063548.501435:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063551.039535:ERROR:gl_utils.cc(424)] [.WebGL-0xf0021e8e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063552.044726:ERROR:gl_utils.cc(424)] [.WebGL-0x26cc004c6900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063552.142326:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063553.245419:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063555.745289:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063555.889095:ERROR:gl_utils.cc(424)] [.WebGL-0x34fc00f96200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063556.453784:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063606.976527:WARNING:spdy_session.cc(2934)] Received WINDOW_UPDATE for invalid stream 13
+[0629/063606.993338:WARNING:spdy_session.cc(2979)] Received HEADERS for invalid stream 13
+[0629/063608.400276:ERROR:gl_utils.cc(424)] [.WebGL-0x3330062b9500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063611.970952:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063616.273342:ERROR:gl_utils.cc(424)] [.WebGL-0x28340356b100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063617.640589:ERROR:gl_utils.cc(424)] [.WebGL-0x283407c3bf00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063618.406274:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063624.746875:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063624.829128:ERROR:gl_utils.cc(424)] [.WebGL-0xf00780d500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063625.321343:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063626.579762:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063627.915348:ERROR:gl_utils.cc(424)] [.WebGL-0x26cc091a0000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063628.946343:ERROR:gl_utils.cc(424)] [.WebGL-0x34fc0789b100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063632.113407:ERROR:gl_utils.cc(424)] [.WebGL-0x333005b71c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063633.870252:ERROR:gl_utils.cc(424)] [.WebGL-0x283402518700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/063637.641635:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063641.042972:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063652.884090:WARNING:spdy_session.cc(2934)] Received WINDOW_UPDATE for invalid stream 99
+[0629/063652.902599:WARNING:spdy_session.cc(2979)] Received HEADERS for invalid stream 99
+[0629/063653.977474:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063655.403025:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063655.542347:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063656.040286:ERROR:gl_utils.cc(424)] [.WebGL-0xf00780e300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063656.795811:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063656.866245:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063658.475133:ERROR:gl_utils.cc(424)] [.WebGL-0x26cc032a2300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063700.745793:ERROR:gl_utils.cc(424)] [.WebGL-0x3ad003e89500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063701.322048:ERROR:gl_utils.cc(424)] [.WebGL-0x34fc0915bf00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063702.267724:ERROR:gl_utils.cc(424)] [.WebGL-0x2d4004ab800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063724.791192:ERROR:gl_utils.cc(424)] [.WebGL-0x3ad006c7e900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063725.959969:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063727.854097:ERROR:gl_utils.cc(424)] [.WebGL-0x2d403356200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063728.393479:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063728.855354:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063730.999900:ERROR:gl_utils.cc(424)] [.WebGL-0x2ff80358ff00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063732.530595:ERROR:gl_utils.cc(424)] [.WebGL-0x270004c4600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063735.660261:ERROR:gl_utils.cc(424)] [.WebGL-0x3ee4027ec000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063744.809526:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063748.201421:ERROR:gl_utils.cc(424)] [.WebGL-0x3ad0004abf00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063753.706548:ERROR:gl_utils.cc(424)] [.WebGL-0x2d407cfd500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063756.723919:ERROR:gl_utils.cc(424)] [.WebGL-0x2ff8016b0700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063758.273412:ERROR:gl_utils.cc(424)] [.WebGL-0x270056ae200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063804.767043:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063805.683373:ERROR:gl_utils.cc(424)] [.WebGL-0x3ee406a9a300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063808.428672:ERROR:gl_utils.cc(424)] [.WebGL-0xe9000494d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063813.506521:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063813.683068:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063817.735532:ERROR:gl_utils.cc(424)] [.WebGL-0x10b4004cf800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063821.127085:ERROR:gl_utils.cc(424)] [.WebGL-0x2ff80358ea00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063823.361358:ERROR:gl_utils.cc(424)] [.WebGL-0x270069c3100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063825.030043:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063836.773439:ERROR:gl_utils.cc(424)] [.WebGL-0x3ee404f8f100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063838.687146:ERROR:gl_utils.cc(424)] [.WebGL-0xe900304ff00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063847.984755:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063848.983020:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063851.486476:ERROR:gl_utils.cc(424)] [.WebGL-0x3220004d1b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063852.444319:WARNING:spdy_session.cc(2934)] Received WINDOW_UPDATE for invalid stream 15
+[0629/063852.466870:WARNING:spdy_session.cc(2979)] Received HEADERS for invalid stream 15
+[0629/063852.638014:ERROR:gl_utils.cc(424)] [.WebGL-0xa1402a5d500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063854.221406:ERROR:gl_utils.cc(424)] [.WebGL-0x10b402d08000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063903.055272:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/063903.425794:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063903.437663:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/063908.438340:ERROR:gl_utils.cc(424)] [.WebGL-0xe28004c2a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063911.429527:ERROR:gl_utils.cc(424)] [.WebGL-0xe9005fc7f00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063929.141022:WARNING:spdy_session.cc(2934)] Received WINDOW_UPDATE for invalid stream 17
+[0629/063929.158074:WARNING:spdy_session.cc(2979)] Received HEADERS for invalid stream 17
+[0629/063930.327469:ERROR:gl_utils.cc(424)] [.WebGL-0x322006c9f800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063930.909606:ERROR:gl_utils.cc(424)] [.WebGL-0xa1406a5e200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063931.908951:ERROR:gl_utils.cc(424)] [.WebGL-0x10b406853f00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063936.883937:ERROR:gl_utils.cc(424)] [.WebGL-0xe28004c4600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/063946.285890:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/064000.720771:ERROR:gl_utils.cc(424)] [.WebGL-0xe28037e2a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/064003.530804:ERROR:gl_utils.cc(424)] [.WebGL-0xa1402a5ce00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/064004.061461:ERROR:gl_utils.cc(424)] [.WebGL-0x322004c33800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070353.122924:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070358.176126:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070358.269353:ERROR:command_buffer_proxy_impl.cc(132)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[0629/070358.356169:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070358.372880:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070358.419606:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070358.430942:ERROR:command_buffer_proxy_impl.cc(132)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[0629/070358.445332:ERROR:command_buffer_proxy_impl.cc(132)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[0629/070358.526441:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070358.602335:ERROR:command_buffer_proxy_impl.cc(132)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[0629/070418.879157:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/070419.441703:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/070420.442571:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/070424.908380:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/070459.632516:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/070509.554229:ERROR:ffmpeg_common.cc(959)] Unsupported pixel format: -1
+[0629/070536.640859:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070536.841016:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070536.929090:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070536.950657:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070537.000749:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070542.174946:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070542.337839:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070543.324835:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070543.339101:ERROR:gl_utils.cc(424)] [.WebGL-0x1d8404bf5500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070543.604742:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070543.765457:ERROR:gl_utils.cc(424)] [.WebGL-0xb3c0500c000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070544.622433:ERROR:gl_utils.cc(424)] [.WebGL-0x2c7c02799500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070545.066052:ERROR:gl_utils.cc(424)] [.WebGL-0x85c05680600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070545.487368:ERROR:gl_utils.cc(424)] [.WebGL-0xf4401dbc000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070545.837453:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070615.839323:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070616.520757:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070617.067997:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070617.146291:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070617.775291:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070617.827221:ERROR:gl_utils.cc(424)] [.WebGL-0xf4406d6a300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070620.215844:ERROR:gl_utils.cc(424)] [.WebGL-0x1d8407115500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070620.901803:ERROR:gl_utils.cc(424)] [.WebGL-0x85c070fce00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070621.085467:ERROR:gl_utils.cc(424)] [.WebGL-0x2c7c0741b800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070623.120760:ERROR:gl_utils.cc(424)] [.WebGL-0xb3c00fb5b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070645.598249:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070646.488459:ERROR:gl_utils.cc(424)] [.WebGL-0xf4406d6b100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070646.597131:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070647.901486:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070648.158853:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070648.412633:ERROR:gl_utils.cc(424)] [.WebGL-0x2c7c05c6d500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070650.780988:ERROR:gl_utils.cc(424)] [.WebGL-0x1d8405930700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070651.222403:ERROR:gl_utils.cc(424)] [.WebGL-0x85c026c8e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070651.396666:ERROR:gl_utils.cc(424)] [.WebGL-0xb3c02ff0700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070651.837469:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070708.836105:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070712.018884:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070712.325182:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070712.425400:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070712.571673:ERROR:gl_utils.cc(424)] [.WebGL-0x1454057f0600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070712.812001:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070713.247944:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070713.735076:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070716.079332:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070716.410523:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070716.979979:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070717.384345:ERROR:gl_utils.cc(424)] [.WebGL-0x2f3c03082300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070720.589841:ERROR:gl_utils.cc(424)] [.WebGL-0xffc0212a900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070721.314863:ERROR:gl_utils.cc(424)] [.WebGL-0x172804a60000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070722.706181:ERROR:gl_utils.cc(424)] [.WebGL-0x2af401d8ea00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070727.515104:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070730.455199:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070731.949550:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070732.595781:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070740.454680:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070741.329393:ERROR:gl_utils.cc(424)] [.WebGL-0x145400da5400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070743.253948:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/070748.142571:ERROR:gl_utils.cc(424)] [.WebGL-0x2f3c03084600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070748.350450:ERROR:gl_utils.cc(424)] [.WebGL-0x2f3c07908e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070750.227726:ERROR:gl_utils.cc(424)] [.WebGL-0xffc00512a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070750.649496:ERROR:gl_utils.cc(424)] [.WebGL-0x2af4045a6200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070752.456341:ERROR:gl_utils.cc(424)] [.WebGL-0x172804a61500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070755.643208:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070758.593908:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070758.690457:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070800.639561:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070804.399445:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070806.007107:ERROR:gl_utils.cc(424)] [.WebGL-0x1454057ef100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070815.448452:ERROR:gl_utils.cc(424)] [.WebGL-0x2f3c03080700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/070816.444677:ERROR:gl_utils.cc(424)] [.WebGL-0x2af4045a0700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070818.879010:ERROR:gl_utils.cc(424)] [.WebGL-0xffc00515400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070821.015025:ERROR:gl_utils.cc(424)] [.WebGL-0x172801ff3f00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070822.554158:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070824.921406:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070827.720403:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070828.574208:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070829.202789:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070829.400891:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070830.354004:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070830.537051:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070831.218931:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070832.020088:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070834.485502:ERROR:gl_utils.cc(424)] [.WebGL-0x2e0c031b3800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070836.996066:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070840.070351:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070841.758884:ERROR:gl_utils.cc(424)] [.WebGL-0xaec01d53800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070842.527319:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070844.542968:ERROR:gl_utils.cc(424)] [.WebGL-0x50c027a5400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070844.675170:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070846.807496:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070847.399292:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070848.313985:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070849.549232:ERROR:gl_utils.cc(424)] [.WebGL-0x3ddc034f3f00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070851.104937:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070853.681459:ERROR:gl_utils.cc(424)] [.WebGL-0x2e0c031b4600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070853.899819:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070855.450068:ERROR:gl_utils.cc(424)] [.WebGL-0x31b80288a900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070859.607288:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070902.170200:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070906.592765:ERROR:gl_utils.cc(424)] [.WebGL-0xaec0793ce00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070908.588490:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/070909.305788:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070913.824124:ERROR:gl_utils.cc(424)] [.WebGL-0x50c054aea00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070914.493684:ERROR:gl_utils.cc(424)] [.WebGL-0x50c01f45b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070915.591188:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070918.591503:ERROR:gl_utils.cc(424)] [.WebGL-0x2e0c07dce200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070919.307676:ERROR:gl_utils.cc(424)] [.WebGL-0x3ddc04392a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070922.697302:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070923.308781:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070923.391833:ERROR:gl_utils.cc(424)] [.WebGL-0xaec07940d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070926.922026:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070928.921232:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070930.153402:ERROR:gl_utils.cc(424)] [.WebGL-0x31b803d25400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070930.404836:ERROR:gl_utils.cc(424)] [.WebGL-0x50c054b0600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/070934.785041:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070939.676555:ERROR:gl_utils.cc(424)] [.WebGL-0x3ddc0670e300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070939.849758:ERROR:gl_utils.cc(424)] [.WebGL-0x3ddc0670c000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/070941.472958:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070945.780913:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070947.590059:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070948.162030:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070948.726173:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070949.439694:ERROR:gl_utils.cc(424)] [.WebGL-0x2e7806536200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070951.342867:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070951.465699:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/070953.447731:ERROR:gl_utils.cc(424)] [.WebGL-0x34f001de9b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070953.561710:ERROR:gl_utils.cc(424)] [.WebGL-0x26cc016e6300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/070956.688675:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/070957.091724:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/070957.981459:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071000.360924:ERROR:gl_utils.cc(424)] [.WebGL-0x31b800d96a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071002.329572:ERROR:gl_utils.cc(424)] [.WebGL-0x295404ecaa00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071002.668690:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071016.641963:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071017.876633:ERROR:gl_utils.cc(424)] [.WebGL-0x2e7807cb8d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071019.275037:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071020.454547:ERROR:gl_utils.cc(424)] [.WebGL-0x26cc053d3800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071020.741136:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071023.226315:ERROR:gl_utils.cc(424)] [.WebGL-0x34f00679ea00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071023.423355:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071024.169851:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071025.605280:ERROR:gl_utils.cc(424)] [.WebGL-0x2954062b7100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071026.979885:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/071028.542752:ERROR:gl_utils.cc(424)] [.WebGL-0x238802af2300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071028.954149:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071039.997671:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071040.822375:ERROR:gl_utils.cc(424)] [.WebGL-0x2e7807355b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071042.056554:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071042.649593:ERROR:gl_utils.cc(424)] [.WebGL-0x26cc04731c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071046.497556:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071046.626093:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071047.999426:ERROR:gl_utils.cc(424)] [.WebGL-0x34f003736a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071048.044999:ERROR:gl_utils.cc(424)] [.WebGL-0x295403308700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071049.096313:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071052.518668:ERROR:gl_utils.cc(424)] [.WebGL-0x2388014c1b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071054.926855:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/071059.200375:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/071059.219290:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/071100.653602:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071102.234189:ERROR:gl_utils.cc(424)] [.WebGL-0x77003a55400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071102.419356:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071104.198026:ERROR:gl_utils.cc(424)] [.WebGL-0xba803561c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071105.246601:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071108.057332:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071110.734172:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071111.669713:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071113.154911:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071114.736342:ERROR:gl_utils.cc(424)] [.WebGL-0x2388014c1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071116.149567:ERROR:gl_utils.cc(424)] [.WebGL-0x210405517100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071116.633694:ERROR:gl_utils.cc(424)] [.WebGL-0x9cc00509c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071116.753528:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071117.205833:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071123.377753:ERROR:gl_utils.cc(424)] [.WebGL-0x77006165b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071126.212191:ERROR:gl_utils.cc(424)] [.WebGL-0xba804ff0d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071128.443777:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071133.201818:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071136.440778:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071138.836293:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071138.942402:ERROR:gl_utils.cc(424)] [.WebGL-0x3ad405dc5400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071143.853577:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071144.744316:WARNING:spdy_session.cc(2934)] Received WINDOW_UPDATE for invalid stream 47
+[0629/071145.500809:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071145.736183:ERROR:gl_utils.cc(424)] [.WebGL-0x2104073f0600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071148.578192:ERROR:gl_utils.cc(424)] [.WebGL-0x77006b7ce00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071149.825018:ERROR:gl_utils.cc(424)] [.WebGL-0xba807795b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071150.560846:ERROR:gl_utils.cc(424)] [.WebGL-0x9cc08edf100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071156.788145:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071157.167245:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071202.976970:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/071202.996420:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/071203.881589:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071205.077188:ERROR:gl_utils.cc(424)] [.WebGL-0x3ad40608dc00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071213.750656:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071214.987198:ERROR:gl_utils.cc(424)] [.WebGL-0x210405514700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071215.189765:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071215.784904:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071217.281986:ERROR:gl_utils.cc(424)] [.WebGL-0x3e7801ff0d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071218.429545:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071219.005871:ERROR:gl_utils.cc(424)] [.WebGL-0x29402ece300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071220.901508:ERROR:gl_utils.cc(424)] [.WebGL-0x9cc06cb1c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071223.232325:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/071223.437873:WARNING:webrtc_voice_engine.cc(683)] Attempting to stop aecdump when no audio processing module is present
+[0629/071228.824452:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071231.024098:ERROR:gl_utils.cc(424)] [.WebGL-0x3ad4026dcd00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071241.634704:ERROR:gl_utils.cc(424)] [.WebGL-0x3e7804961b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071243.677564:ERROR:gl_utils.cc(424)] [.WebGL-0x3e7806645500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071243.947309:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071245.317189:ERROR:gl_utils.cc(424)] [.WebGL-0x29404c2f100]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071246.630439:ERROR:gl_utils.cc(424)] [.WebGL-0x11c00369ce00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071248.971545:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071252.621769:ERROR:gl_utils.cc(424)] [.WebGL-0x38440356d500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071254.961535:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071258.507371:ERROR:gl_utils.cc(424)] [.WebGL-0xfa40049e300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071304.217606:ERROR:gl_utils.cc(424)] [.WebGL-0x3e7804962900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[0629/071305.292298:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071309.961514:ERROR:gl_utils.cc(424)] [.WebGL-0x29401e7ea00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071311.910134:ERROR:gl_utils.cc(424)] [.WebGL-0x11c002306200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071316.072440:ERROR:gl_utils.cc(424)] [.WebGL-0x38440529c700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071324.021046:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071326.917688:ERROR:gl_utils.cc(424)] [.WebGL-0x92c036d4e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071328.294548:ERROR:gl_utils.cc(424)] [.WebGL-0xfa407cbce00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071332.377442:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071334.097366:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071336.979114:ERROR:gl_utils.cc(424)] [.WebGL-0xf40050cd00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071337.960172:ERROR:gl_utils.cc(424)] [.WebGL-0x11c002304d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071342.943298:ERROR:gl_utils.cc(424)] [.WebGL-0x384401760d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071348.581390:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071357.076472:ERROR:gl_utils.cc(424)] [.WebGL-0xfa40305ea00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071357.357838:ERROR:gl_utils.cc(424)] [.WebGL-0x92c05c53f00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071403.024250:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071405.784499:ERROR:gl_utils.cc(424)] [.WebGL-0x3a300050d400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071408.155843:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071411.761070:ERROR:gl_utils.cc(424)] [.WebGL-0x3474004c2300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071415.791247:ERROR:gl_utils.cc(424)] [.WebGL-0xf409054d00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071418.141919:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071423.626144:INFO:peer_connection_dependency_factory.cc(709)] Running WebRTC with a combined Network and Worker thread.
+[0629/071426.998841:WARNING:sandbox_linux.cc(430)] InitializeSandbox() called with multiple threads in process gpu-process.
+[0629/071428.350585:ERROR:gl_utils.cc(424)] [.WebGL-0x92c036d8600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071433.497910:ERROR:gl_utils.cc(424)] [.WebGL-0x1c0003571c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071448.943361:ERROR:gl_utils.cc(424)] [.WebGL-0x3a300584d500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071453.257131:ERROR:gl_utils.cc(424)] [.WebGL-0x3474082f9500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071455.425425:ERROR:gl_utils.cc(424)] [.WebGL-0xf405ca9b00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071501.875095:ERROR:gl_utils.cc(424)] [.WebGL-0x1c0007099c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071521.961664:ERROR:gl_utils.cc(424)] [.WebGL-0x3a300050e200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071525.451518:ERROR:gl_utils.cc(424)] [.WebGL-0x1c0004c96300]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0629/071527.653472:ERROR:gl_utils.cc(424)] [.WebGL-0x347402682a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
