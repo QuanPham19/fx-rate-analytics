@@ -18,9 +18,10 @@ def clean_fee(fee):
         return float(match.group().replace(',', ''))
 
 class ExchangeRateAnalytics:
-    def __init__(self, wise_df, wu_df, corridor_dir, output_dir, screenshot_dir, screenshot_zip):
+    def __init__(self, wise_df, wu_df, mc_df, corridor_dir, output_dir, screenshot_dir, screenshot_zip):
         self.wise_df = wise_df
         self.wu_df = wu_df
+        self.mc_df = mc_df
         self.corridor_dir = corridor_dir
         self.output_dir = output_dir
         self.screenshot_dir = screenshot_dir
@@ -99,7 +100,7 @@ class ExchangeRateAnalytics:
             curr_send_country = element[0]
             curr_df = self.get_unit_df(df_list, element[0], element[1])
             curr_df.to_excel(writer, sheet_name=country_receive, startrow=startrow, startcol=startcol, index=True)
-            startcol += (3 + 2) 
+            startcol += (4 + 2) 
 
     def create_zip(self, folder_to_zip, output_zip_file):
         shutil.make_archive(output_zip_file.replace('.zip', ''), 'zip', folder_to_zip)
@@ -136,8 +137,9 @@ class ExchangeRateAnalytics:
             for country in country_receive_list:
                 df_wise = self.get_fx_data(self.wise_df, country)
                 df_wu = self.get_fx_data(self.wu_df, country)
+                df_mc = self.get_fx_data(self.mc_df, country)
                 # bps_comparison(df_wise, df_wu)
-                self.excel_writer([df_wise, df_wu], country, writer)
+                self.excel_writer([df_mc, df_wise, df_wu], country, writer)
                 print('Successfully write to Excel')
 
         self.create_zip(self.screenshot_dir, self.screenshot_zip)

@@ -25,9 +25,13 @@ def run_exchange_rate_analytics():
     wise_df = wise_scraping(driver_path, chrome_path)
     wu_df = wu_scraping(driver_path, chrome_path)
     
+    mc_df = wu_df.copy()
+    mc_df['company_name'] = 'Mastercard'
+
     test = ExchangeRateAnalytics(
         wise_df=wise_df,
         wu_df=wu_df,
+        mc_df=mc_df,
         corridor_dir='input/sending_receiving_country_pair.xlsx',
         output_dir='output/output.xlsx',
         screenshot_dir='screenshots',
